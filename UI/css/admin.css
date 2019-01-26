@@ -1,0 +1,114 @@
+body{
+    position: relative;
+    font-family: sans-serif;
+}
+
+nav{
+    margin: 0 0px 5px 0px;
+    width: auto;
+    height: 30px;
+    padding: 5px;
+    background-color:greenyellow;
+}
+
+nav li {
+    list-style: none;
+    display: inline;
+    letter-spacing: 2px;
+    font-weight: bold
+}
+
+.right {
+    float: right;
+}
+
+li a{
+    text-decoration: none
+}
+
+.show-party{
+    position: relative;
+    left:33%;
+    width: 62%;
+    height: auto;
+    color: black;
+}
+
+#party-header{
+    margin: 30px;
+    padding: 5px;
+    letter-spacing: 2px
+}
+
+.political-party{
+    margin: 10px;
+    padding: 5px;
+    list-style: none;
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+
+button{
+    border: none;
+    margin:5px;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+button:hover{
+    border: 3px;
+    font-size: 15px;
+    font-weight: bolder;
+}
+input{
+    display: block;
+    margin: 5px;
+    padding: 5px;
+    border: none;
+    letter-spacing: 1px
+}
+
+input:hover{
+border: 5px;
+font-weight: bolder
+}
+
+p{
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin: 5px;
+    padding: 5px
+}
+
+#create-party{
+    position: absolute;
+    top:20%;
+}
+/* #create-office{
+    position: absolute;
+    bottom: 50%
+} */
+
+@media only screen and (max-width: 768px) {
+    .show-party{
+        position: relative;
+        left:5%;
+        width: 90%;
+        height: auto;
+    }
+
+    #create-party{
+        position: absolute;
+        top:110%;
+        left: 20%;
+    }
+
+    #create-office{
+        position: absolute;
+        top:150%;
+        left: 20%
+    } 
+
+}
