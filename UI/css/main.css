@@ -3,7 +3,7 @@ html{
 }
 
 body{
-    /* background-image: url(../images/voting2.jpg); */
+    background-image: url(../images/index.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     font-family: sans-serif;
@@ -13,12 +13,12 @@ body{
 nav{
     margin: 5px;
     padding: 5px;
+    display: flex;
 }
 
 nav li {
-    display: inline;
-    margin: 15px;
-    margin-right: 5px;
+    display: flex;
+    margin: 10px;
     font-size: 150%;
 }
 
@@ -27,8 +27,11 @@ li a, a:visited {
     color: blue;
 }
 
-.right{
-    float: right;
+.nav-right{
+    /* float: right; */
+    
+    display: flex;
+    margin-left: auto;
 }
 
 li:hover{
@@ -101,7 +104,23 @@ li:hover{
 /* other screen size */
 @media only screen and (max-width: 768px) {
     body{
-        background: red;
+        background-size: cover;
+    }
+    #left{
+        font-size: 150%
+    }
+    nav,.nav-right{
+        flex-direction: column;
+        margin: 3px;
+    }
+    nav li {
+        display: flex;
+        margin: 0px;
+        font-size: 80%;
+    }
+    li{
+        margin:0;
+        padding:0px
     }
     .toggle-btn{
 		align-self: flex-end;
@@ -111,13 +130,19 @@ li:hover{
         cursor: pointer;
         
     }
-    .right{
+    .nav-right{
+        /* display: none; */
+        margin-top: 15px;
+        margin-left: auto;
+    }
+    .right {
         display: none;
     }
 
     .show{
         display: flex;
     }
+    
 
     /* li{
         display: block;
@@ -128,6 +153,6 @@ li:hover{
         position: absolute;
         top:10%;
         font-size: 20px;
-        color: white;
+        color:blue;
     }
 }

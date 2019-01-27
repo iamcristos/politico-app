@@ -1,3 +1,6 @@
+html{
+    height: 100%;
+}
 body{
     position: relative;
     font-family: sans-serif;
@@ -8,7 +11,7 @@ nav{
     width: auto;
     height: 30px;
     padding: 5px;
-    background-color:greenyellow;
+    background-color: blue;
 }
 
 nav li {

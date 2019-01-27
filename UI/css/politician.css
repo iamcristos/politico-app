@@ -1,14 +1,16 @@
 body{
     text-align: center;
+    font-family: sans-serif;
+    margin: 0%;
 }
 
 
 nav{
     margin: 0 0px 5px 0px;
     width: auto;
-    height: 30px;
+    height: 40px;
     padding: 5px;
-    background-color:greenyellow;
+    background-color:blue;
 }
 
 nav li {
@@ -28,7 +30,22 @@ nav li {
 }
 
 li a{
-    text-decoration: none
+    text-decoration: none;
+    color: white;
+}
+#form-div{
+    margin: auto;
+    margin-top: 70px;
+    /* background: rebeccapurple; */
+    /* border: 5px solid rgba(119, 119, 119, 0.5); */
+    border: 5px solid rgba(0, 0, 255, 0.4);
+    width: 300px;
+    
+    /* box-shadow: -10px -5px 10px gray; */
+    /* display: grid; */
+}
+h2{
+    color: blue
 }
 
 .form{

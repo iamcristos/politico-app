@@ -1,13 +1,3 @@
-
-let explorebtn= document.getElementById('explore')
-
-explorebtn.addEventListener('click', ()=>{
-    location.href='userSignup.html'
-});
-
-
-
-
 let nav = document.getElementById('visible');
 let navFunction= ()=>{
     let navItems= document.getElementsByClassName('right');
@@ -20,4 +10,12 @@ let navFunction= ()=>{
 }
 
 nav.addEventListener('click', navFunction);
+
+let form= document.getElementById('form-group')
+
+form.addEventListener('submit', (e)=>{
+    location.href='user.html'
+    e.preventDefault()
+});
+
 

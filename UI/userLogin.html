@@ -10,20 +10,26 @@
 <body>
     <nav>
         <li id="left"><a href="index.html"> Politico</a></li> 
+        <!-- <div class="toggle-btn nav" id="visible">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div> -->
         <li class="right"><a href="adminLogin.html">Admin</a> </li>
         <li class="right"><a href="politician.html">Candidate</a></li>
     </nav>
     <h2>Login User</h2>
     <form id="form-group">
         <div class="form">
-            <input type="email" placeholder="email">
+            <input type="email" placeholder="email" required>
         </div>
         <div class="form">
-            <input type="password" placeholder="input password">
+            <input type="password" placeholder="input password" required>
         </div>
         <button id="submit-form">Login</button>
     </form>
-    <p >Dont have an account?<a href="userSignup.html">Register</a></p>
-    <script src="main.js"></script>
+    <p >Dont have an account?<a href="userSignup.html">Register</a></p> <br>
+    <a href="reset.html">Forgot Password</a>
+    <script src="js/login.js"></script>
 </body>
 </html>

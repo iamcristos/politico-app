@@ -1,6 +1,11 @@
 body{
     font-family: sans-serif;
     margin:0px;
+    /* background-image: url(../images/vote.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: sans-serif;
+    height: 100%; */
 }
 
 nav{
@@ -8,7 +13,7 @@ nav{
     /* margin: 0 0px 5px 0px; */
     width: auto;
     padding: 5px;
-    background-color:greenyellow;
+    background-color:blue;
 }
 
 nav li {
@@ -32,7 +37,8 @@ nav li {
 
 input{
     margin: 5px;
-
+    margin-left: 5px;
+    padding: 5px;
 }
 
 button{
@@ -78,15 +84,23 @@ td{
     padding: 10px;
 }
 
+.img{
+    height: 20px;
+    position: relative;
+    top: 5px;
+    left:5px;
+    right: 10px;
+}
+
 @media only screen and (max-width: 768px) {
     .vote{
         position: absolute;
-        top:5%;
+        top:8%;
         left:10%
     }
     .vote-result{
         position: absolute;
-        top:85%;
+        top:120%;
         left:5%;
         /* font-size: 1px; */        
     }

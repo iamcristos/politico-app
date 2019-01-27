@@ -1,5 +1,6 @@
 body{
-    text-align: center
+    text-align: center;
+    margin: 0px;
 }
 
 nav{
@@ -7,7 +8,7 @@ nav{
     width: auto;
     height: 30px;
     padding: 5px;
-    background-color:greenyellow;
+    background-color: blue;
 }
 
 nav li {
@@ -16,6 +17,18 @@ nav li {
     margin: 10px;
     letter-spacing: 2px;
     font-weight: bold
+}
+.toggle-btn{
+    transition: all 500ms linear;
+    display: none;	
+}
+.toggle-btn span{
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    margin: 5px 0;
+    border-radius: 5px;
 }
 
 .right {
@@ -27,27 +40,24 @@ nav li {
 }
 
 li a{
-    text-decoration: none
+    text-decoration: none;
+    color: white;
 }
 
 h2{
-    position: absolute;
-    top:30%;
-    left: 45%;
-    letter-spacing: 2px;
-    color: blue
+    margin: auto;
+    margin-top: 10%;
+    letter-spacing: 1px;
+    color: black;
 }
 
 #form-group{
-    position: absolute;
+    /* position: absolute;
     top: 40%;
-    left: 40%;
+    left: 40%; */
 }
 
-p{  position: absolute;
-    top:65%;
-    left: 42%
-}
+
 
 input{
     width: 250px;
@@ -55,7 +65,7 @@ input{
     border: none;
     margin: 10px;
     padding-left: 5px;
-    background-color: red
+    /* background-color: red */
 }
 
 button{
@@ -76,22 +86,25 @@ button:hover{
     nav{
         margin: auto;
     }
-    h2{
+
+    .toggle-btn{
+		align-self: flex-end;
+		display: initial;
         position: absolute;
-        top:30%;
-        left: 30%;
-        letter-spacing: 2px;
-        color: blue
+        left:80%;
+        cursor: pointer;
+        
+    }
+    h2{
+       
     }
     #form-group{
-        position: absolute;
+        margin: auto;
+        /* position: absolute;
         top: 40%;
-        left: 18%;
+        left: 18%; */
     }
     
-    p{  position: absolute;
-        top:60%;
-        left: 20%
-    }
+    
 
 }

@@ -17,29 +17,30 @@
     <form id="form-group">
         <h2>Sign Up</h2>
         <div class="form">
-            <input type="text" name="firstname" placeholder="firstname" class="user">
+            <input type="text" name="firstname" placeholder="firstname" class="user" required> 
         </div>
         <div class="form">
-            <input type="text" name="lastname" placeholder="Lastname"class="user">
+            <input type="text" name="lastname" placeholder="Lastname"class="user" required>
         </div>
         <div class="form">
-            <input type="email" name="email" placeholder="email address"class="user">
+            <input type="email" name="email" placeholder="email address"class="user" required>
             <span id="error"></span>
         </div>
         <div class="form">
-            <input type="number" name="phone" placeholder="Phonenumber"class="user">
+            <input type="number" name="phone" placeholder="Phonenumber"class="user" required>
         </div>
         <div class="form">
-            <input type="password" name="password" placeholder="password"class="user">
+            <input type="password" name="password" placeholder="password"class="user" required>
             <span id="error"></span>
         </div>
         <div class="form">
-            <input type="password" name="password2" placeholder="confirm password"class="user">
+            <input type="password" name="password2" placeholder="confirm password"class="user" required>
             <span id="error"></span>
         </div>
         <button id="submit-form">Register</button>
+        <p id="p">Already have an account? <a href="userLogin.html">Login</a></p>
     </form>
-    <p id="p">Already have an account? <a href="userLogin.html">Login</a></p>
+    
     <script src="js/register.js"></script>
 </body>
 </html>
