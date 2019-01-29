@@ -1,3 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%
+}
+
 body{
     margin: 0px;
     font-family: sans-serif;
@@ -36,7 +46,7 @@ li a{
   z-index: 1; /* Stay on top */
   top: 50px; /* Stay at the top */
   left: 0;
-  background-color: #111; /* Black */
+  background-color:#93c2df; /* Black */
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px;
 }
@@ -63,11 +73,13 @@ a{
     display: flex;
     padding: 10px;
     text-decoration: none;
+    color: white;
 }
 
 #view-party{
-    margin-left: 160px; /* Same as the width of the sidebar */
-  padding: 0px 10px
+    margin-left: 20%; 
+    /* Same as the width of the sidebar */
+    padding: 0px 10px
 }
 
 table{
@@ -76,11 +88,94 @@ table{
 }
 
 #grid-party{
-    display: inline
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+}
+.party-image{
+    
+    margin: 10px
+}
+h3{
+    display: inline;
+    text-align: center
+}
+.party-list{
+    display: inline;
+    border: 1px solid red;
+    margin: auto;
+    margin-left: 20px;
+    /* margin-right: 20px; */
+    padding: 20px
 }
 
-.party-list{
-    display: inline
+/* voting page */
+.right{
+    margin-left: auto;
+    margin-right: 5px;
+}
+
+.vote{
+    position: absolute;
+    top:10%;
+    left:50%
+}
+
+input{
+    margin: 5px;
+    margin-left: 5px;
+    padding: 5px;
+}
+
+button{
+    text-align: center;
+    margin:10px;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    border-color:none;
+    background-color:none;
+    cursor: pointer;
+}
+
+button:hover{
+    border: 3px;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+h2{
+    font-size: 16px
+}
+
+.vote-result{
+    position: absolute;
+    top: 5%;
+    left:1%;
+    font-size: 15px;
+    margin: 5px;
+    padding: 5px;
+}
+
+table{
+    margin: 10px;
+}
+
+tr{
+    margin: 10px;
+    padding: 10px;
+}
+
+td{
+    margin: 10px;
+    padding: 10px;
+}
+
+.img{
+    height: 20px;
+    position: relative;
+    top: 5px;
+    left:5px;
+    right: 10px;
 }
 
 @media screen and (max-width: 700px) {
@@ -88,9 +183,16 @@ table{
       width: 100%;
       height: auto;
       position: relative;
+      top: 0%;
     }
     #dasboard a {float: left;}
-    div.content {margin-left: 0;}
+    div.content, {margin-left: 0;}
+
+    .vote{
+        position: relative;
+        top:5%;
+        left:10%
+    }
   }
   
   /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
