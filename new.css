@@ -1,0 +1,102 @@
+body{
+    margin: 0px;
+    font-family: sans-serif;
+    height: 100%
+}
+
+nav{
+    display: flex;
+    width: auto;
+    height: 50px;
+    background-color: blue;
+    padding: 0 20px;
+}
+.nav-right{
+    display: flex;
+    margin-left: auto
+}
+
+li{
+    list-style: none;
+    color: white;
+    padding: 10px;
+    margin-top: 7px;
+    font-size: 100%;
+}
+
+li a{
+    color: white;
+    text-decoration: none;
+}
+
+#dasboard{
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 160px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 50px; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+#avatar{
+    margin-left: 30px;
+}
+
+#pic{
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+h2{
+    font-weight: lighter;
+    margin-bottom: 2px;
+}
+
+h3{
+    font-size: 10px;
+}
+
+a{
+    display: flex;
+    padding: 10px;
+    text-decoration: none;
+}
+
+#view-party{
+    margin-left: 160px; /* Same as the width of the sidebar */
+  padding: 0px 10px
+}
+
+table{
+    text-align: center;
+    padding: 20px;
+}
+
+#grid-party{
+    display: inline
+}
+
+.party-list{
+    display: inline
+}
+
+@media screen and (max-width: 700px) {
+    #dasboard {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    #dasboard a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+  @media screen and (max-width: 400px) {
+    #dasboard a {
+      text-align: center;
+      float: none;
+    }
+  }

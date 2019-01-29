@@ -10,36 +10,37 @@
 <body>
     <nav>
         <li id="left"><a href="index.html"> Politico</a></li> 
-        <li class="right"><a href="adminLogin.html">Admin</a> </li>
         <li class="right"><a href="politician.html">Candidate</a></li>
     </nav>
         <!-- <h1>Kindly Fill in Your Details Correctly</h1>  -->
-    <form id="form-group">
+    <div class="form-group">
         <h2>Sign Up</h2>
-        <div class="form">
-            <input type="text" name="firstname" placeholder="firstname" class="user" required> 
-        </div>
-        <div class="form">
-            <input type="text" name="lastname" placeholder="Lastname"class="user" required>
-        </div>
-        <div class="form">
-            <input type="email" name="email" placeholder="email address"class="user" required>
-            <span id="error"></span>
-        </div>
-        <div class="form">
-            <input type="number" name="phone" placeholder="Phonenumber"class="user" required>
-        </div>
-        <div class="form">
-            <input type="password" name="password" placeholder="password"class="user" required>
-            <span id="error"></span>
-        </div>
-        <div class="form">
-            <input type="password" name="password2" placeholder="confirm password"class="user" required>
-            <span id="error"></span>
-        </div>
-        <button id="submit-form">Register</button>
-        <p id="p">Already have an account? <a href="userLogin.html">Login</a></p>
-    </form>
+        <form id="form-group">
+            <div class="form">
+                <input type="text" name="firstname" placeholder="firstname" class="user" required> 
+            </div>
+            <div class="form">
+                <input type="text" name="lastname" placeholder="Lastname"class="user" required>
+            </div>
+            <div class="form">
+                <input type="email" name="email" placeholder="Email Address"class="user" required>
+            </div>
+            <div class="form">
+                <input type="number" name="phone" placeholder="Phonenumber"class="user" required>
+            </div>
+            <div class="form">
+                <input type="password" name="password" placeholder="Password"class="user" required>
+            </div>
+            <div class="form">
+                <input type="password" name="password2" placeholder="Confirm Password"class="user" required>
+            </div>
+            <div class="form">
+                <button id="submit-form">Register</button>
+            </div>
+            <p id="p">Already have an account? <a href="userLogin.html">Login</a></p>
+        </form>
+    </div>
+    
     
     <script src="js/register.js"></script>
 </body>

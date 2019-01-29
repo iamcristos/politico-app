@@ -1,5 +1,6 @@
 body{
     text-align: center;
+    font-family: sans-serif;
     margin: 0px;
 }
 
@@ -44,32 +45,42 @@ li a{
     color: white;
 }
 
+a{
+    color: blue;
+}
+
 h2{
     margin: auto;
-    margin-top: 10%;
+    margin-top: 5px;
     letter-spacing: 1px;
     color: black;
 }
 
-#form-group{
-    /* position: absolute;
-    top: 40%;
-    left: 40%; */
+.form-group{
+    border:1px solid blue;
+    padding: 10px;
+    margin: auto;
+    margin-top: 10%;
+    width: 70%;
+    border-radius: 5px;
+    text-align: center;
 }
 
 
 
 input{
-    width: 250px;
-    height: 20px;
-    border: none;
+    width: 70%;
+    height: 40px;
     margin: 10px;
     padding-left: 5px;
+    border-radius: 5px;
+    border: 1px solid blue
     /* background-color: red */
 }
 
 button{
-    width:250px;
+    width:70%;
+    height: 30px;
     margin:10px;
     cursor: pointer;
     letter-spacing: 2px;
@@ -84,7 +95,7 @@ button:hover{
 
 @media only screen and (max-width: 768px) {
     nav{
-        margin: auto;
+        /* margin: auto; */
     }
 
     .toggle-btn{
@@ -95,16 +106,14 @@ button:hover{
         cursor: pointer;
         
     }
-    h2{
-       
-    }
-    #form-group{
-        margin: auto;
+
+    .form-group{
+        /* width: 200px; */
+        /* margin: 5px; */
+        margin-top: 10%;
+        /* margin-left: 20% */
         /* position: absolute;
         top: 40%;
         left: 18%; */
     }
-    
-    
-
 }

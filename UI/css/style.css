@@ -41,38 +41,39 @@ li a, li a:active{
     text-decoration: none;
     color: white;
 }
-#form-group{
-    margin-top: 100px;
-    text-align: center;
-}
 
-/* #p{
-    position: absolute;
-    top:90%;
-    left: 33%
-}
-p{  position: absolute;
-    top:60%;
-    left: 40%
-} */
+p{  
+    text-align: center
+} 
 
 .form{
     margin: 10px;
     text-align: center;
 }
 
+.form-group{
+    border:1px solid blue;
+    padding: 10px;
+    margin: auto;
+    margin-top: 5%;
+    width: 500px;
+    border-radius: 5px;
+    
+}
+
 input{
-    width: 250px;
-    height: 20px;
-    border: none;
-    border-bottom: 1px solid black;
+    width: 70%;
+    height: 40px;
+    margin: 10px;
     padding-left: 5px;
-    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid blue
     /* background-color: red */
 }
 
 button{
-    width:250px;
+    width:70%;
+    height: 30px;
     margin:10px;
     cursor: pointer;
     letter-spacing: 2px;
@@ -81,25 +82,43 @@ button{
     color: white
 }
 
+button:hover{
+    font-weight: bolder
+}
+
 h2{
-    text-align: center
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    color: black;
+}
+a{
+    color: blue;
 }
 
 @media only screen and (max-width: 768px) {
-    body{
-        font-family: sans-serif;
-        background-image: url(../images/vote.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
+    .form-group{
+        width: auto;
+        margin: 20px;
+        margin-top: 5%;
+        /* position: absolute;
+        top: 40%;
+        left: 18%; */
     }
-    
+
+    input, button{
+        /* width: auto; */
+        text-align: center;
+        margin-left: 0;
+    }
+
     li{
         color: white;
     }
     
-    h2,p{
-        color: white;
+    h2{
+        margin-top: 1%;
     }
 
 }
