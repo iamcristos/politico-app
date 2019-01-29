@@ -61,7 +61,7 @@ h2{
     padding: 10px;
     margin: auto;
     margin-top: 10%;
-    width: 70%;
+    width: 500px;
     border-radius: 5px;
     text-align: center;
 }
@@ -110,7 +110,8 @@ button:hover{
     .form-group{
         /* width: 200px; */
         /* margin: 5px; */
-        margin-top: 10%;
+        width: 70%;
+        margin-top: 20%;
         /* margin-left: 20% */
         /* position: absolute;
         top: 40%;
