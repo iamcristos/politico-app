@@ -1,0 +1,16 @@
+body{
+    margin: 0px;
+    font-family: sans-serif;
+    height: 100%
+}
+
+nav{
+    display: flex;
+    width: auto;
+    height: 30px;
+    background-color: blue;
+}
+
+li{
+    list-style: none;
+}

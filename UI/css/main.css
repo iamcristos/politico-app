@@ -1,0 +1,158 @@
+html{
+    height: 100%;
+}
+
+body{
+    background-image: url(../images/index.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: sans-serif;
+    height: 100%;
+}
+
+nav{
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+}
+
+nav li {
+    display: flex;
+    margin: 10px;
+    font-size: 150%;
+}
+
+li a, a:visited {
+    text-decoration: none;
+    color: blue;
+}
+
+.nav-right{
+    /* float: right; */
+    
+    display: flex;
+    margin-left: auto;
+}
+
+li:hover{
+    cursor: pointer;
+}
+
+.home{
+    padding-top: 10%;
+    font-size: 20px;
+    margin: 5%;
+    text-align: center;
+    color: blue;
+}
+
+/* #explore{
+    outline: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    background-color: orange;
+    font-size: 16px;
+    font-weight: 300px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 25px 80px;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: 0px 6px #efa424;
+} */
+#explore{
+    margin:5px;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    border-color: blue;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+#explore:hover{
+    box-shadow: 2px;
+    font-size: 30px;
+
+}
+
+#explore:active{
+    box-shadow: none;
+    top: 6px;
+}
+
+.toggle-btn{
+    transition: all 500ms linear;
+    display: none;	
+}
+
+.toggle-btn span{
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+/* other screen size */
+@media only screen and (max-width: 768px) {
+    body{
+        background-size: cover;
+    }
+    #left{
+        font-size: 150%
+    }
+    nav,.nav-right{
+        flex-direction: column;
+        margin: 3px;
+    }
+    nav li {
+        display: flex;
+        margin: 0px;
+        font-size: 80%;
+    }
+    li{
+        margin:0;
+        padding:0px
+    }
+    .toggle-btn{
+		align-self: flex-end;
+		display: initial;
+        position: absolute;
+        left:80%;
+        cursor: pointer;
+        
+    }
+    .nav-right{
+        /* display: none; */
+        margin-top: 15px;
+        margin-left: auto;
+    }
+    .right {
+        display: none;
+    }
+
+    .show{
+        display: flex;
+    }
+    
+
+    /* li{
+        display: block;
+        list-style-type: initial
+    } */
+
+    .home{
+        position: absolute;
+        top:10%;
+        font-size: 20px;
+        color:blue;
+    }
+}

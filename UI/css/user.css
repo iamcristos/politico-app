@@ -1,0 +1,132 @@
+body{
+    font-family: sans-serif;
+    /* background-image: url(../images/vote.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: sans-serif;
+    height: 100%; */
+}
+
+nav{
+    margin: 0 0px 5px 0px;
+    width: auto;
+    height: 30px;
+    padding: 5px;
+    background-color:blue;
+}
+
+nav li {
+    list-style: none;
+    display: inline;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin: 5px;
+    float: left;
+}
+
+li a{
+    text-decoration: none;
+    color: white;
+}
+
+.right{
+    float: right;
+}
+
+#user{
+    position: relative;
+    margin: 5px
+}
+
+#welcome{
+    text-align: center;
+    left:50%;
+    font-size: 200%;
+    color: blue;
+}
+
+#instruction{
+    /* position: absolute;
+    top:100px;
+    left:30%; */
+    text-align: center;
+    margin-left: 25%;
+    width: 60%x;
+    height: 300px;
+    /* border: 2px solid black */
+}
+
+div p{
+    font-size: 100%;
+    font-weight: bold;
+    margin: 5px;
+    padding: 5px;
+    letter-spacing: 1px
+}
+
+button{
+    border: none;
+    margin:5px;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    border-color: transparent;
+    cursor: pointer;
+    text-align: center;
+}
+
+button:hover{
+    border: 3px;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+#view-party{
+    position: absolute;
+    top: 1%;
+    width:200px;
+    background: none
+}
+li{
+    list-style: none;
+    margin:10px;
+    padding: 5px;
+    text-align: center;
+}
+
+.img{
+    height: 20px;
+    position: relative;
+    top: 5px;
+    left:5px;
+    right: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    #instruction{
+        position: relative;
+        top:10px;
+        left:0;
+        text-align: left;
+        /* margin-left: 20%; */
+        
+        height: 300px;
+        /* border: 2px solid black */
+    }
+    #welcome{
+        text-align: left
+    }
+    p{
+        text-align: left
+    }
+    ul {
+        display: block;
+        float: left;
+    }
+    #view-party{
+        position: absolute;
+        top: 190%;
+        left:20%;
+        width:200px;
+        background: none
+    }
+}
