@@ -1,0 +1,31 @@
+{
+  "name": "andelabootcamp",
+  "version": "1.0.0",
+  "description": "A web App that users can vote ",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon src/app.js --exec babel-node --",
+    "test": "mocha --require @babel/register ./test/**/*.js --exit"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/register": "^7.0.0",
+    "body-parser": "^1.18.3",
+    "debug": "^4.1.1",
+    "expect": "^24.0.0",
+    "express": "^4.16.4",
+    "express-validator": "^5.3.1",
+    "mocha": "^5.2.0",
+    "morgan": "^1.9.1",
+    "supertest": "^3.4.2"
+  },
+  "devDependencies": {
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  }
+}
