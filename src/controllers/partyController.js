@@ -15,6 +15,13 @@ class PartyController {
       party: newParty,
     });
   }
+
+  static getAllParties(req, res) {
+    return res.status(200).send({
+      success: true,
+      party
+  })
+}
 }
 
 export default PartyController

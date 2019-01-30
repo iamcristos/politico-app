@@ -7,6 +7,7 @@ const router = express.Router();
 const versionedEndPoint = '/api/v1/parties';
 
 router.post(versionedEndPoint,partyValidator.createParty ,partyController.createParty);
+router.get(versionedEndPoint, partyController.getAllParties);
 
 
 export default router;

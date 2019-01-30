@@ -1,5 +1,5 @@
 import party from '../db/partyDb'
-let errorMessage=[];
+
 class partyValidator {
     static createParty(req,res,next){
         try {
