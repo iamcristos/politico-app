@@ -30,6 +30,19 @@ class partyValidator {
       }
     });
     }
+
+    static editAParty(req,res,next) {
+        try {
+            const {name} = req.body;
+            if (!name) throw 'Can only edit party name'
+        } catch (error) {
+            return res.status(405).send({
+                success: false,
+                message: error
+            })
+        }
+        next()
+    }
 }
 
     export default partyValidator
