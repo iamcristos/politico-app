@@ -59,6 +59,27 @@ class PartyController {
       }
     })
   }
+
+  static deleteAParty(req,res){
+    const id = parseInt(req.params.id);
+    try {
+      party.find((item)=>{
+        if (item.id === id) {
+          party.splice(id-1, 1)
+          return res.status(501).send({
+            success:true,
+            message:'Party succesfully deleted',
+            party
+          })
+        } 
+      }) 
+      }   catch (error) {
+          return res.status(404).send({
+          success: false,
+          message: 'Party does not exist'
+      })
+    }
+  };
 }
 
 export default PartyController
