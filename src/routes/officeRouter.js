@@ -7,5 +7,6 @@ const router = express.Router();
 const versionedEndPoint = '/api/v1/office';
 
 router.post(versionedEndPoint,officeValidator.createOffice ,officeController.createOffice);
+router.get(versionedEndPoint, officeValidator.getAllOffice, officeController.getAllOffice);
 
 export default router
