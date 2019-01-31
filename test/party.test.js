@@ -41,4 +41,16 @@ describe('/GET ALL PARTIES', ()=>{
       })
       .end(done)
   })
+});
+
+describe('/GET A PARTY', ()=>{
+  it('should retun a political party', (done)=>{
+    request(app)
+      .get('/api/v1/parties}/1')
+      .expect(200)
+      .expect((result)=> {
+
+      })
+      .end(done)
+  })
 })
