@@ -11,11 +11,13 @@ describe('/CREATE POLITICAL PARTY', () => {
     const body = {
       "id": 3, "name": 'PPP', "hqAddress": 'Tafawa road', "logourl": 'link',
     };
+    console.log(typeof(body))
     request(app)
       .post('/api/v1/parties')
       .send(body)
       .expect(201)
       .expect((result) => {
+        console.log((result.body.party) )
         expect(result.body.party).toEqual(body);
       })
       .end(done);
@@ -43,14 +45,4 @@ describe('/GET ALL PARTIES', ()=>{
   })
 });
 
-describe('/GET A PARTY', ()=>{
-  it('should retun a political party', (done)=>{
-    request(app)
-      .get('/api/v1/parties}/1')
-      .expect(200)
-      .expect((result)=> {
 
-      })
-      .end(done)
-  })
-})

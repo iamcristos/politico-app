@@ -14,7 +14,7 @@ class partyValidator {
                     msg: error
                 });
             }
-    // next()
+    next()
     }
 
     static getAPoliticalParty(req,res,next){
@@ -25,10 +25,6 @@ class partyValidator {
         console.log(item);
       if (item.id === Id ) {
           return res.send(item)
-        // return res.status(404).send({
-        //   success: true,
-        //   message: 'Party dont exist'
-        // });
       } else {
         next()
       }

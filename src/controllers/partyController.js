@@ -32,11 +32,11 @@ class PartyController {
           success: true,
           message: item
         })
-      // } else{
-      //   return res.status(404).send({
-      //     success: false,
-      //     message: 'Political party dont exist'
-      //   });
+      } else{
+        return res.status(404).send({
+          success: false,
+          message: 'Political party dont exist'
+        });
       }
     });
   }
