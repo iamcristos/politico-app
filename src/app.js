@@ -9,6 +9,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(router);
 
-app.listen(3000, () => {});
+app.listen(3000, () => {
+    console.log('hello')
+});
 
 export default app

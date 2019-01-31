@@ -20,8 +20,26 @@ class PartyController {
     return res.status(200).send({
       success: true,
       party
-  })
-}
+    })
+  }
+
+  static getASpecificParty(req,res) {
+    const id = req.params.id
+    const Id= parseInt(id)
+    party.map((item)=>{
+      if(item.id === Id ) {
+        return res.status(200).send({
+          success: true,
+          message: item
+        })
+      } else{
+        return res.status(404).send({
+          success: false,
+          message: 'Political party dont exist'
+        });
+      }
+    });
+  }
 }
 
 export default PartyController
