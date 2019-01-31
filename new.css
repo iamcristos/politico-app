@@ -22,6 +22,7 @@ nav{
     height: 50px;
     background-color: blue;
     padding: 0 20px;
+    z-index: 1;
 }
 .nav-right{
     display: flex;
@@ -48,13 +49,19 @@ li a{
   z-index: 1; /* Stay on top */
   top: 50px; /* Stay at the top */
   left: 0;
-  background-color:#93c2df; /* Black */
+  background-color: #93c2df; 
+  /* background-color: blue; */
+  /* border-top:1px solid white; */
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px;
 }
 
 #avatar{
     margin-left: 30px;
+}
+#dasboard a{
+    /* border-bottom: 1px solid white; */
+    color: blue;
 }
 
 #pic{
@@ -106,7 +113,7 @@ h3{
 }
 .party-list{
     display: inline;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     margin: auto;
     margin-left: 20px;
     /* margin-right: 20px; */
@@ -135,7 +142,9 @@ form{
     margin: 20px;
     padding: 10px;
     width: 300px;
-    border: 1px solid red;
+    /* border: 1px solid blue; */
+    background: #93c2df;
+    border-radius: 10px;
 }
 
 form:hover{
@@ -207,6 +216,9 @@ td{
 }
 
 @media screen and (max-width: 700px) {
+    nav{
+        position: relative;
+    }
     #dasboard {
       width: 100%;
       height: auto;
