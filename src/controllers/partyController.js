@@ -40,6 +40,25 @@ class PartyController {
       }
     });
   }
+
+  static editAParty(req,res){
+    const id = parseInt(req.params.id);
+    const {name} = req.body
+    party.find((item)=>{
+      if (item.id === id ) {
+        item.name = name
+        return res.status(200).send({
+          success: true,
+          message: party
+        })
+      } else{
+        return res.status(404).send({
+          success: false,
+          message:"party dont exist"
+        })
+      }
+    })
+  }
 }
 
 export default PartyController

@@ -8,7 +8,8 @@ const versionedEndPoint = '/api/v1/parties';
 
 router.post(versionedEndPoint,partyValidator.createParty ,partyController.createParty);
 router.get(versionedEndPoint, partyController.getAllParties);
-router.get(`${versionedEndPoint}/:id`, partyController.getASpecificParty)
+router.get(`${versionedEndPoint}/:id`, partyController.getASpecificParty);
+router.patch(`${versionedEndPoint}/:id`,partyValidator.editAParty, partyController.editAParty);
 
 
 export default router;
