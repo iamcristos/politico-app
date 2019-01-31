@@ -10,6 +10,7 @@ router.post(versionedEndPoint,partyValidator.createParty ,partyController.create
 router.get(versionedEndPoint, partyController.getAllParties);
 router.get(`${versionedEndPoint}/:id`, partyController.getASpecificParty);
 router.patch(`${versionedEndPoint}/:id`,partyValidator.editAParty, partyController.editAParty);
+router.delete(`${versionedEndPoint}/:id`, partyController.deleteAParty);
 
 
 export default router;
