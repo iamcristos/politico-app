@@ -44,7 +44,7 @@ class PartyController {
     const id = parseInt(req.params.id);
     const {name} = req.body
     party.find((item)=>{
-      if (item.id === id ) {
+      if (item === id ) {
         item.name = name
         return res.status(200).send({
           success: true,
