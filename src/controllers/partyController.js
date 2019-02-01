@@ -43,15 +43,15 @@ class PartyController {
   static editAParty(req,res){
     const id = parseInt(req.params.id);
     const {name} = req.body
-    party.find((item)=>{
-      if (item === id ) {
-        item.name = name
+    for (let i=0; i<party.length; i++){
+      if (party[i].id === id ) {
+        party[i].name = name
         return res.status(200).send({
           success: true,
-          message: item
+          message: party[i]
         })
       } 
-    })
+    }
     return res.status(404).send({
       success: false,
       message:"party dont exist"
