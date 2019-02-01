@@ -26,19 +26,18 @@ class PartyController {
   static getASpecificParty(req,res) {
     const id = req.params.id
     const Id= parseInt(id)
-    party.find((item)=>{
-      if(item === Id ) {
-        return res.status(200).send({
+    for (let i=0; i< party.length; i++){
+      if (party[i].id === Id){
+         res.status(200).send({
           success: true,
-          message: item
-        })
-      } else{
-        return res.status(404).send({
-          success: false,
-          message: 'Political party dont exist'
+          message: party[i]
         });
-      }
-    });
+      } 
+    }
+      return res.status(404).send({
+        success: false,
+        message: 'Political party dont exist'
+      });
   }
 
   static editAParty(req,res){
@@ -49,14 +48,13 @@ class PartyController {
         item.name = name
         return res.status(200).send({
           success: true,
-          message: party
+          message: item
         })
-      } else{
-        return res.status(404).send({
-          success: false,
-          message:"party dont exist"
-        })
-      }
+      } 
+    })
+    return res.status(404).send({
+      success: false,
+      message:"party dont exist"
     })
   }
 
@@ -69,14 +67,14 @@ class PartyController {
           return res.status(200).send({
             success:true,
             message:'Party succesfully deleted',
-            party
+            party: item
           })
         } 
       }) 
       }   catch (error) {
           return res.status(404).send({
           success: false,
-          message: 'Party does not exist'
+          message: 'Party dont exist'
       })
     }
   };

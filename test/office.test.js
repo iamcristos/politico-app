@@ -11,7 +11,7 @@ describe('/CREATE POLITICAL OFFICE', () => {
       "id": 3, "name": 'President', "type": 'Federal'
     };
     request(app)
-      .post('/api/v1/office')
+      .post('/api/v1/offices')
       .send(body)
       .expect(201)
       .expect((result) => {
@@ -23,7 +23,7 @@ describe('/CREATE POLITICAL OFFICE', () => {
   it('should not create a political party', (done) => {
     const party = {};
     request(app)
-      .post('/api/v1/office')
+      .post('/api/v1/offices')
       .send(party)
       .expect(400)
       .end(done);
@@ -33,7 +33,7 @@ describe('/CREATE POLITICAL OFFICE', () => {
 describe('/GET ALL OFFICE', ()=>{
   it('should return all political office', (done)=>{
     request(app)
-      .get('/api/v1/office')
+      .get('/api/v1/offices')
       .expect(200)
       .expect((result) => {
         expect(result.body.office).toEqual(office)
@@ -47,7 +47,7 @@ describe('/GET A SPECIFIC OFFICE ', ()=>{
       let id= office.find((item)=> item.id)
       
       request(app)
-        .get(`/api/v1/office/1.toHexString()`)
+        .get(`/api/v1/offices/1.toHexString()`)
         .expect(200)
         .expect((result) => {
           expect(result.body.message).toEqual(office[0])

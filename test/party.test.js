@@ -67,7 +67,7 @@ it ('should Edit a party name', (done)=>{
     .send({name:'her'})
     .expect(200)
     .expect((result)=>{
-      expect(result.body.message[0].name).toBe(name)
+      expect(result.body.message.name).toBe(name)
     })
     .end(done)
 });
