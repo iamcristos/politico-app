@@ -15,6 +15,16 @@ class officeValidator {
             }
         next()
     }
+
+    static getAllOffice(req,res,next) {
+        if (office.length === 0) {
+            return res.status(200).send({
+                success: true,
+                message: 'There are no registerd political parties'
+            })
+        }
+        next()
+    }
 }
 
 export default officeValidator;
