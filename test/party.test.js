@@ -11,13 +11,12 @@ describe('/CREATE POLITICAL PARTY', () => {
     const body = {
       "id": 3, "name": 'PPP', "hqAddress": 'Tafawa road', "logourl": 'link',
     };
-    console.log(typeof(body))
+    
     request(app)
       .post('/api/v1/parties')
       .send(body)
       .expect(201)
       .expect((result) => {
-        console.log((result.body.party) )
         expect(result.body.party).toEqual(body);
       })
       .end(done);
@@ -68,7 +67,7 @@ it ('should Edit a party name', (done)=>{
     .send({name:'her'})
     .expect(200)
     .expect((result)=>{
-      expect(result.body.message[0].name).toBe(name)
+      expect(result.body.message.name).toBe(name)
     })
     .end(done)
 });
@@ -86,7 +85,7 @@ describe('/DELETE A SPECIFIC PARTY', ()=>{
 it('should Delete a Party', (done)=>{
   request(app)
     .delete(`/api/v1/parties/1.toHexString()`)
-    .expect(204)
+    .expect(200)
     .end(done)
 })
 })

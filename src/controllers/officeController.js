@@ -31,13 +31,12 @@ class officeController {
             success: true,
             message: item
           })
-        } else{
-          return res.status(404).send({
-            success: false,
-            message: 'Political office dont exist'
-          });
-        }
+        } 
       });
+        return res.status(404).send({
+          success: false,
+          message: 'Political office dont exist'
+        });
     }
 }
 

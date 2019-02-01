@@ -4,7 +4,7 @@ import officeValidator from '../middlewares/officeMiddleware'
 
 const router = express.Router();
 
-const versionedEndPoint = '/api/v1/office';
+const versionedEndPoint = '/api/v1/offices';
 
 router.post(versionedEndPoint,officeValidator.createOffice ,officeController.createOffice);
 router.get(versionedEndPoint, officeValidator.getAllOffice, officeController.getAllOffice);

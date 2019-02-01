@@ -4,7 +4,8 @@
   "description": "A web App that users can vote ",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon src/app.js --exec babel-node --",
+    "start": "babel-node src/app.js",
+    "start-dev": "nodemon src/app.js --exec babel-node --",
     "test": "mocha --require @babel/register ./test/**/*.js --exit"
   },
   "author": "",
