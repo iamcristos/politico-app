@@ -66,7 +66,7 @@ class PartyController {
       party.find((item)=>{
         if (item.id === id) {
           party.splice(id-1, 1)
-          return res.status(501).send({
+          return res.status(204).send({
             success:true,
             message:'Party succesfully deleted',
             party
