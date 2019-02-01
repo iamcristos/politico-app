@@ -88,7 +88,7 @@ a{
 #view-party{
     margin: auto;
     margin-top: 10%;
-    margin-left: 15%; 
+    margin-left: 20%; 
     /* Same as the width of the sidebar */
     padding: 0px 10px
 }
@@ -134,9 +134,6 @@ h4{
 }
 
 .vote{
-    /* position: relative;
-    top:10%;
-    left:20%; */
     display: flex;
     flex-direction: column;
     margin:10px;
@@ -149,7 +146,6 @@ form{
     margin: 20px;
     padding: 10px;
     width: 300px;
-    /* border: 1px solid blue; */
     background: #93c2df;
     border-radius: 10px;
 }
@@ -223,6 +219,10 @@ td{
 }
 .edit{
     color: red
+}
+
+.profile input {
+    display: block
 }
 
 @media screen and (max-width: 700px) {
