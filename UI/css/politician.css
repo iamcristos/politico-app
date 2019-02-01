@@ -35,14 +35,15 @@ li a{
 }
 #form-div{
     margin: auto;
-    margin-top: 70px;
-    /* background: rebeccapurple; */
-    /* border: 5px solid rgba(119, 119, 119, 0.5); */
-    border: 5px solid rgba(0, 0, 255, 0.4);
+    border: 1px solid rgba(0, 0, 255, 0.4);
     width: 300px;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 5%;
+    width: 500px;
+    border-radius: 5px;
+    margin-bottom: 2%;
     
-    /* box-shadow: -10px -5px 10px gray; */
-    /* display: grid; */
 }
 h2{
     color: blue;
@@ -53,29 +54,27 @@ h2{
     
 }
 
+
+
 input{
-    width: 250px;
-    height: 20px;
-    border: none;
-    margin: 5px;
-    padding: 5px;
-    background-color:wheat
+    width: 70%;
+    height: 40px;
+    margin: 10px;
+    padding-left: 5px;
+    border-radius: 5px;
+    border: 1px solid blue
+    /* background-color: red */
 }
-/* .select{
-    font-size: 13px;
-    padding: 10px 8px 10px 14px;
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    position: relative;
-  } */
+
+
 select{
     background: transparent;
     line-height: 1;
-    border: 0;
+    border: 1px solid blue ;
     padding: 0;
     border-radius: 0;
-    width: 250px;
+    width: 70%;
+    height: 40px;
     position: relative;
     z-index: 10;
     font-size: 1em;
