@@ -8,6 +8,10 @@
     "start-dev": "nodemon src/app.js --exec babel-node --",
     "test": "mocha --require @babel/register ./test/**/*.js --exit"
   },
+  "keywords": [
+    "example",
+    "heroku"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -28,5 +32,8 @@
     "eslint": "^5.12.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0"
+  },
+  "engines": {
+    "node": "10.x"
   }
 }
