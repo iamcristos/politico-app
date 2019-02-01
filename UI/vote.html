@@ -5,69 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Politico</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/vote.css" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/new.css" />
+    
 </head>
 <body>
-   <nav>
-       <li class="left">Politico</li>
-       <nav class="right">
-        <li >Back</li>
-        <li >Logout</li>
-       </nav>
-   </nav> 
-   <p id="time"></p>
-   <div class="vote">
-    <form action="">
-        <h2>Presidential Candidate</h2>
-        <input type="radio" name="President" id="" value="party"> Atiku Abubakar <img src="./images/img4.jpg" alt="" class="img"> <br>
-        <input type="radio" name="President" id="" value="party"> Fela Durotoye <img src="./images/img3.jpg" alt="" class="img"> <br>
-        <input type="radio" name="President" id="" value="party"> Jerry Gana <img src="./images/img2.png" alt="" class="img"> <br>
-        <input type="radio" name="President" id="" value="party"> Muhammadu Buhari <img src="./images/img1.jpg" alt="" class="img"> <br>
-   <button type="submit">vote</button>
-</form>
+    <nav>
+        <li class="left"><a href='index.html'>Politico</a></li>
+        <div class="nav-right">
+            <li class="right"><a href="newUser.html">Parties</a></li>
+            <li class="right"><a href="userLogin.html">Logout</a></li>
+        </div>
+    </nav>
+
+    <div id="dasboard">
+        <div id="avatar">
+            <img src="images/avatar.png" height="30px" width="auto" alt="" id="pic">
+            <h2>Nmeregini Vincent</h2>
+            <h3>vincent@gmail.com</h3>
+        </div>        
+        <a href="newUser.html">Political Parties</a>
+        <a href="seeVote.html">Your Vote</a>
+        <a href="vote.html">Candidate</a>
+    </div>
+
+   <div class='vote'> 
+    <form action="" id="">
+            <h2 class="h2">Presidential Candidate</h2> <br>
+            <input type="radio" name="President" id="" value="party"> Atiku Abubakar <img src="images/img4.jpg" alt="" class="img"> <br>
+            <input type="radio" name="President" id="" value="party"> Fela Durotoye <img src="images/img3.jpg" alt="" class="img"> <br>
+            <input type="radio" name="President" id="" value="party"> Jerry Gana <img src="images/img2.png" alt="" class="img"> <br>
+            <input type="radio" name="President" id="" value="party"> Muhammadu Buhari <img src="images/img1.jpg" alt="" class="img"> <br>
+        <button type="submit">vote</button>
+    </form>
 <form action="#">
-    <h2>Governotorial Candidate</h2>
+    <h2 class="h2">Governotorial Candidate</h2> <br>
     <input type="radio" name="governor" id="" value="party"> Kenny Frank  <img src="./images/img4.jpg" alt="" class="img"> <br>
     <input type="radio" name="governor" id="" value="party"> James Thomas <img src="./images/img1.jpg" alt="" class="img">  <br>
     <input type="radio" name="governor" id="" value="party"> Cliton Fred  <img src="./images/img2.png" alt="" class="img"> <br>
    <button type="submit">vote</button>
 </form>
 <form action="#">
-    <h2>Senetorial Candidate</h2>
+    <h2 class="h2">Senetorial Candidate</h2> <br>
     <input type="radio" name="governor" id="" value="party"> Farouk Ahmed <img src="./images/img4.jpg" alt="" class="img"> <br>
     <input type="radio" name="governor" id="" value="party"> Bisola James <img src="./images/img1.jpg" alt="" class="img"> <br>
     <input type="radio" name="governor" id="" value="party"> Jeremiah Jeremiah <img src="./images/img3.jpg" alt="" class="img"><br>
    <button type="submit">vote</button>
 </form>
-   </div>
-   <div class="vote-result">
-        <h1>Votes</h1>
-        <table>
-            <tr>
-                <th>Presidential Election</th>
-            </tr>
-            <tr>
-                <!-- <th>President</th> -->
-                <td>Candidate</td>
-                <td>Party</td>
-            </tr>
-            <tr>
-                <td>Atiku Abubakar</td>
-                <td><img src="./images/img4.jpg" alt="" class="img"></td>
-            </tr>
-            <tr>
-                    <th>Governotorial Election</th>
-            </tr>
-            <tr>
-                <td>Candidate</td>
-                <td>Party</td>
-            </tr>
-            <tr>
-                <td>James Thomas</td>
-                <td><img src="./images/img3.jpg" alt="" class="img"></td>
-            </tr>
-        </table>
+<form action="" id="">
+    <h2 class="h2">House of Rep Candidate</h2> <br>
+    <input type="radio" name="President" id="" value="party"> James Joliya <img src="images/img4.jpg" alt="" class="img"> <br>
+    <input type="radio" name="President" id="" value="party"> Fedrick UI <img src="images/img3.jpg" alt="" class="img"> <br>
+    <input type="radio" name="President" id="" value="party"> Jerry Favor<img src="images/img2.png" alt="" class="img"> <br>
+    <input type="radio" name="President" id="" value="party"> Bosan Bosan <img src="images/img1.jpg" alt="" class="img"> <br>
+    <button type="submit">vote</button>
+</form>
    </div>
 </body>
 </html>
+<!-- "vote" -->

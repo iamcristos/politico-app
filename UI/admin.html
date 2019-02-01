@@ -3,38 +3,49 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Politico</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/admin.css" />
+    
 </head>
 <body>
     <nav>
         <li class="left"><a href='index.html'>Politico</a></li>
-        <li class="right">Logout</li>
-    </nav>
-    <div class="show-party">
-        <h1 id="party-header">Political Parties</h1>
-        <div class="political-party">
-            <li>AAA<button>Edit</button><button>Delete</button></li>
-            <li>ABB<button>Edit</button><button>Delete</button></li>
-            <li>BAA<button>Edit</button><button>Delete</button></li>
-            <li>CCA<button>Edit</button><button>Delete</button></li>
+        <div class="nav-right">
+            <li class="right"><a href="newUser.html">Parties</a></li>
+            <li class="right"><a href="userLogin.html">Logout</a></li>
         </div>
+    </nav>
+
+    <div id="dasboard">
+        <div id="avatar">
+            <img src="images/avatar.png" height="30px" width="auto" alt="" id="pic"> <br>
+            <h2>Nmeregini Vincent</h2>
+            <h3>vincent@gmail.com</h3>
+        </div>        
+        <a href="createParty.html">Create Parties</a>
+        <a href="createOffice.html">Create Office</a>
     </div>
-    <div id="create-party">
-        <p>Create Party</p>
-        <!-- when the button is clicked a form appears to create a party -->
-        <form action="">
-            <input type="text" placeholder="political party">
-            <button>Submit</button>
-        </form>
+
+    <div id="view-party">
+        <h1 id="party-header">Political Parties</h1>
+        <table>
+            <tbody>
+            <tr>
+                <th>NAME</th>
+                <th>ADDRESS</th>
+                <th>LOGO</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+                <tr>
+                    <td>ALL PROGRESSIVE CONGRESS</td>
+                    <td>Abuja First </td>
+                    <td><img src="images/img1.jpg" alt=""> </td>
+                    <td>Edit</td>
+                    <td>Delete</td>
+                </tr>
+            </tbody>
+        </table>
+            
     </div>
-    <div id="create-office">
-        <p>Create Office</p> 
-        <form action="">
-            <input type="text" placeholder="government-office">
-            <button>Submit</button>
-        </form>
-    </div>
-</body>
-</html>

@@ -43,16 +43,14 @@ li a{
 }
 
 #dasboard{
-  height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 160px; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 50px; /* Stay at the top */
-  left: 0;
+  height: 100%;
+  width: 160px;  
+   position: fixed;
+  z-index: 1;
+   top: 50px;   
+   left: 0;
   background-color: #93c2df; 
-  /* background-color: blue; */
-  /* border-top:1px solid white; */
-  overflow-x: hidden; /* Disable horizontal scroll */
+  overflow-x: hidden; 
   padding-top: 20px;
 }
 
@@ -162,7 +160,7 @@ button:hover{
     }
   }
   
-  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+  
   @media screen and (max-width: 400px) {
     #dasboard a {
       text-align: center;
