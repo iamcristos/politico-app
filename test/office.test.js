@@ -15,7 +15,6 @@ describe('/CREATE POLITICAL OFFICE', () => {
       .send(body)
       .expect(201)
       .expect((result) => {
-        console.log((result.body) )
         expect(result.body.office[2]).toEqual(body);
       })
       .end(done);
@@ -37,7 +36,6 @@ describe('/GET ALL OFFICE', ()=>{
       .get('/api/v1/office')
       .expect(200)
       .expect((result) => {
-          console.log(result.body)
         expect(result.body.office).toEqual(office)
       })
       .end(done)
@@ -47,7 +45,7 @@ describe('/GET ALL OFFICE', ()=>{
 describe('/GET A SPECIFIC OFFICE ', ()=>{
     it('should return a specific political party', (done)=>{
       let id= office.find((item)=> item.id)
-      console.log(id)
+      
       request(app)
         .get(`/api/v1/office/1.toHexString()`)
         .expect(200)

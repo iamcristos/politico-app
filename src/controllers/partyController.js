@@ -26,8 +26,8 @@ class PartyController {
   static getASpecificParty(req,res) {
     const id = req.params.id
     const Id= parseInt(id)
-    party.map((item)=>{
-      if(item.id === Id ) {
+    party.find((item)=>{
+      if(item === Id ) {
         return res.status(200).send({
           success: true,
           message: item
@@ -45,7 +45,7 @@ class PartyController {
     const id = parseInt(req.params.id);
     const {name} = req.body
     party.find((item)=>{
-      if (item.id === id ) {
+      if (item === id ) {
         item.name = name
         return res.status(200).send({
           success: true,
@@ -66,7 +66,7 @@ class PartyController {
       party.find((item)=>{
         if (item.id === id) {
           party.splice(id-1, 1)
-          return res.status(204).send({
+          return res.status(200).send({
             success:true,
             message:'Party succesfully deleted',
             party
