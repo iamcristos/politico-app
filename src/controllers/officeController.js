@@ -21,6 +21,24 @@ class officeController {
         office
       })
     }
+
+    static getASpecificOffice(req,res) {
+      const id = req.params.id
+      const Id= parseInt(id)
+      office.map((item)=>{
+        if(item.id === Id ) {
+          return res.status(200).send({
+            success: true,
+            message: item
+          })
+        } else{
+          return res.status(404).send({
+            success: false,
+            message: 'Political office dont exist'
+          });
+        }
+      });
+    }
 }
 
 export default officeController;
