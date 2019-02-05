@@ -17,14 +17,12 @@ class userMiddleware{
             req.checkBody('password2', 'reuired').notEmpty().equals(req.body.password);
             
             let errors= req.validationErrors();
-
             if(errors){
                 return res.status(400).send({
                     success: false,
                     message: errors
                 })
             }
-
             next()
         
         }
