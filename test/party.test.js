@@ -1,7 +1,7 @@
 import supertest from 'supertest';
 import expect from 'expect';
 import app from '../src/app';
-import party from '../src/db/partyDb';
+import db from '../src/models/db'
 
 
 const request = supertest;
@@ -17,6 +17,7 @@ describe('/CREATE POLITICAL PARTY', () => {
       .send(body)
       .expect(201)
       .expect((result) => {
+        console.log(result)
         expect(result.body.party).toEqual(body);
       })
       .end(done);
@@ -38,7 +39,7 @@ describe('/GET ALL PARTIES', ()=>{
       .get('/api/v1/parties')
       .expect(200)
       .expect((result) => {
-        expect(result.body.party).toEqual(party)
+        expect(result.body.party).toEqual(party.rows[0])
       })
       .end(done)
   })
@@ -52,7 +53,7 @@ describe('/GET A SPECIFIC PARTY ', ()=>{
       .get(`/api/v1/parties/1.toHexString()`)
       .expect(200)
       .expect((result) => {
-        expect(result.body.message).toEqual(party[0])
+        expect(result.body.message).toEqual(party.rows[0])
       })
       .end(done)
   })
