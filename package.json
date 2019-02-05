@@ -16,6 +16,7 @@
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
     "@babel/register": "^7.0.0",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "debug": "^4.1.1",
     "dotenv": "^6.2.0",
@@ -25,6 +26,7 @@
     "jsonwebtoken": "^8.4.0",
     "mocha": "^5.2.0",
     "morgan": "^1.9.1",
+    "password-hash": "^1.2.2",
     "pg": "^7.8.0",
     "supertest": "^3.4.2"
   },

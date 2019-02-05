@@ -1,15 +1,22 @@
 import db from '../models/db'
 
-// const createTable= `CREATE TABLE IF NOT EXISTS Users(
-//     id SERIAL PRIMARY KEY,
-//     firstname VARCHAR(255) not null,
-//     lastname VARCHAR(255) not null,
-//     othername VARCHAR(255) not null,
-//     email VARCHAR(255) UNIQUE not null,
-//     password VARCHAR(255) UNIQUE not null,
-//     phoneNumber VARCHAR(255) not null,
-//     registered TIMESTAMP DEFAULT NOW(),
-//     isAdmin BOOLEAN DEFAULT false);`
+const createUser= `CREATE TABLE IF NOT EXISTS Users(
+    id SERIAL PRIMARY KEY,
+    firstname VARCHAR(255) not null,
+    lastname VARCHAR(255) not null,
+    othername VARCHAR(255) not null,
+    email VARCHAR(255) UNIQUE not null,
+    password VARCHAR(255) UNIQUE not null,
+    phoneNumber VARCHAR(255) not null,
+    passportUrl VARCHAR(225) not null,
+    registered TIMESTAMP DEFAULT NOW(),
+    isAdmin BOOLEAN DEFAULT false);`
+
+db.query(createUser).then((user)=>{
+    console.log(user)
+}).catch((err)=>{
+    console.log(err)
+})
 
 const createParty= `CREATE TABLE IF NOT EXISTS Party(
     id SERIAL PRIMARY KEY,
