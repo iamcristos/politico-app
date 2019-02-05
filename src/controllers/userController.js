@@ -16,10 +16,9 @@ class userController{
                 user: user.rows[0]
             })
         }).catch((err)=>{
-            console.log(err)
-            return res.status(500).send({
+            return res.status(400).send({
                 success: false,
-                message: 'Kindly try again'
+                message: err
             })
         })
     }

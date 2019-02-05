@@ -18,6 +18,13 @@ class userMiddleware{
             
             let errors= req.validationErrors();
 
+            if (errors){
+                return res.status(400).send({
+                    success: false,
+                    message: errors
+                })
+            }
+
             next()
         
         }
