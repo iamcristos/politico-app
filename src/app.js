@@ -4,6 +4,7 @@ import expressValidator from 'express-validator'
 import router from './routes/partyRouter';
 import officeRouter from './routes/officeRouter';
 import userRouter from './routes/userRouter';
+import candidateRouter from './routes/candidateRouter'
 
 const app = express();
 
@@ -16,6 +17,13 @@ app.use(expressValidator())
 app.use(router);
 app.use(officeRouter);
 app.use(userRouter);
+app.use(candidateRouter)
+
+
+
+app.get('/', (req,res,next)=>{
+    res.send('Welcome to Politico App')
+})
 
 app.listen(port, () => {
     console.log('hello')

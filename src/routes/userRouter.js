@@ -6,6 +6,7 @@ const userRouter = express.Router()
 
 const versionedEndPoint = '/api/v1/users'
 
-userRouter.post(versionedEndPoint,userMiddleware.signUpValidate ,userController.userSignup)
+userRouter.post(`${versionedEndPoint}/signup`,userMiddleware.signUpValidate ,userController.userSignup);
+userRouter.post(`${versionedEndPoint}/login`, userMiddleware.signInValidate ,userController.userSignin)
 
 export default userRouter

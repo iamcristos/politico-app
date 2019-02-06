@@ -7,6 +7,7 @@ class partyValidator {
             if (!name) throw "name field required"
             if (!hqAddress) throw 'hqAddress required'
             if (!logourl) throw 'logourl is required'
+            next()
         } catch (error) {
                 return res.status(400).send({
                     success: false,
@@ -14,7 +15,6 @@ class partyValidator {
                     msg: error
                 });
             }
-    next()
     }
 
     static getAPoliticalParty(req,res,next){
