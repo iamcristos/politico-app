@@ -17,6 +17,7 @@ class candidateValidation{
                 message: errors
             })
         }
+        next()
     }
 }
 
