@@ -44,10 +44,11 @@ db.query(createOffice).then((office)=>{
 });
 
 const createCandidate= `CREATE TABLE IF NOT EXISTS Candidate(
-    id SERIAL PRIMARY KEY,
-    candidate INT  UNIQUE NOT NULL REFERENCES Users(id) ON DELETE CASCADE,
-    office INT  UNIQUE NOT null REFERENCES Office(id)  ON DELETE CASCADE,
-    party INT  not null REFERENCES Party(id)  ON DELETE CASCADE
+    id SERIAL UNIQUE,
+    candidate INT NOT NULL REFERENCES Users(id) ON DELETE CASCADE,
+    office INT NOT null REFERENCES Office(id)  ON DELETE CASCADE,
+    party INT  not null REFERENCES Party(id)  ON DELETE CASCADE,
+    PRIMARY KEY (id,candidate,office)
 )`
 
 db.query(createCandidate).then((candidate)=>{
@@ -57,10 +58,11 @@ db.query(createCandidate).then((candidate)=>{
 });
 
 const createVote= `CREATE TABLE IF NOT EXISTS Vote(
-    id SERIAL PRIMARY KEY,
-    candidate INT UNIQUE   NOT NULL REFERENCES Candidate(id) ON DELETE CASCADE,
-    office INT UNIQUE  NOT null REFERENCES Office(id)  ON DELETE CASCADE,
-    voter INT UNIQUE not null REFERENCES Users(id)  ON DELETE CASCADE
+    id SERIAL UNIQUE,
+    candidate INT NOT NULL REFERENCES Candidate(id) ON DELETE CASCADE,
+    office INT NOT null REFERENCES Office(id)  ON DELETE CASCADE,
+    voter INT not null REFERENCES Users(id)  ON DELETE CASCADE,
+    PRIMARY KEY (id,candidate,office, voter)
 )`
 
 db.query(createVote).then((vote)=>{
