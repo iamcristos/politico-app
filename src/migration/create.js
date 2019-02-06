@@ -10,7 +10,7 @@ const createUser= `CREATE TABLE IF NOT EXISTS Users(
     phoneNumber VARCHAR(255) not null,
     passportUrl VARCHAR(225) not null,
     registered TIMESTAMP DEFAULT NOW(),
-    isAdmin BOOLEAN DEFAULT false);`
+    isAdmin BOOLEAN DEFAULT false)`
 
 db.query(createUser).then((user)=>{
     console.log(user)
@@ -23,7 +23,7 @@ const createParty= `CREATE TABLE IF NOT EXISTS Party(
     name VARCHAR(225) not null,
     hqAddress VARCHAR(225) not null,
     logourl VARCHAR(225) not null
-);`
+)`
 
 db.query(createParty).then((party)=>{
  console.log(party)
@@ -45,10 +45,10 @@ db.query(createOffice).then((office)=>{
 
 const createCandidate= `CREATE TABLE IF NOT EXISTS Candidate(
     id SERIAL PRIMARY KEY,
-    user not null reference users(id) ON DELETE CASCADE,
-    office not null reference office(id)  ON DELETE CASCADE,
-    party not null reference party(id)  ON DELETE CASCADE 
-);`
+    candidate INT  UNIQUE NOT NULL REFERENCES Users(id) ON DELETE CASCADE,
+    office INT  UNIQUE NOT null REFERENCES Office(id)  ON DELETE CASCADE,
+    party INT  not null REFERENCES Party(id)  ON DELETE CASCADE 
+)`
 
 db.query(createCandidate).then((candidate)=>{
     console.log(candidate)

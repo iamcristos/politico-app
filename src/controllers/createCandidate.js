@@ -3,9 +3,9 @@ import db from '../models/db';
 class candidate{
 
     static createCandidate(req,res){
-        const {user,office,party} = req.body;
-        const text = 'INSERT INTO Candidate (user, office, party) WHERE VALUES($1,$2,$3)'
-        const values= [user,office,party];
+        const {candidate,office,party} = req.body;
+        const text = 'INSERT INTO Candidate(candidate, office, party) VALUES($1,$2,$3) RETURNING *'
+        const values= [candidate,office,party];
 
         db.query(text,values).then((candidate)=>{
             return res.status(201).send({
@@ -15,6 +15,10 @@ class candidate{
             })
         }).catch((err)=>{
             console.log(err)
+            return res.status(400).send({
+                success: true,
+                message:err
+            })
         });
     }
 }
