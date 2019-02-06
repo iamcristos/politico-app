@@ -18,8 +18,11 @@ class voteCandidate{
             })
 
         }).catch((err)=>{
-            console.log(err)
-        })
+            return res.status(400).send({
+                success: false,
+                message: err
+            })
+        });
     }
 }
 
