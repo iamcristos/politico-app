@@ -4,7 +4,8 @@ import expressValidator from 'express-validator'
 import router from './routes/partyRouter';
 import officeRouter from './routes/officeRouter';
 import userRouter from './routes/userRouter';
-import candidateRouter from './routes/candidateRouter'
+import candidateRouter from './routes/candidateRouter';
+import voteRouter from './routes/voteRouter';
 
 const app = express();
 
@@ -17,7 +18,8 @@ app.use(expressValidator())
 app.use(router);
 app.use(officeRouter);
 app.use(userRouter);
-app.use(candidateRouter)
+app.use(candidateRouter);
+app.use(voteRouter);
 
 
 
