@@ -41,4 +41,17 @@ db.query(createOffice).then((office)=>{
     console.log(office)
 }).catch((err)=>{
     console.log(err)
-})
+});
+
+const createCandidate= `CREATE TABLE IF NOT EXISTS Candidate(
+    id SERIAL PRIMARY KEY,
+    user not null reference users(id) ON DELETE CASCADE,
+    office not null reference office(id)  ON DELETE CASCADE,
+    party not null reference party(id)  ON DELETE CASCADE 
+);`
+
+db.query(createCandidate).then((candidate)=>{
+    console.log(candidate)
+}).catch((err)=>{
+    console.log(err)
+});

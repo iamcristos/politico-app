@@ -13,7 +13,7 @@ class officeController {
           return res.status(201).send({
             success: true,
             message: 'office created succesfully',
-            office
+            office : office.rows[0]
         }) 
       }).catch((err)=>{
          return res.status(422).send({
@@ -30,7 +30,7 @@ class officeController {
         .then((office)=>{
           return res.status(200).send({
             success: true,
-            office
+            office: office.rows[0]
           })
         }).catch((err)=>{
           return res.status(400).send({
@@ -56,11 +56,6 @@ class officeController {
           message: 'Political office dont exist'
         });
       })
-      // office.map((item)=>{
-      //   if(item.id === Id ) {
-         
-      //   } 
-      
         
     }
 }

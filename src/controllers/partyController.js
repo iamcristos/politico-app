@@ -61,7 +61,6 @@ class PartyController {
     const Id = parseInt(id)
     const {name} = req.body
     const text = `UPDATE Party SET name = ${name} WHERE id = ${Id} `
-    console.log(typeof(name))
     
     db.query(text).then((party)=>{
       return res.status(200).send({
