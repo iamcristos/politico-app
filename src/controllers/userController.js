@@ -51,7 +51,10 @@ class userController{
                     }],
                 })
             } else {
-                throw error
+                return res.status(401).send({
+                    success: false,
+                    message: 'invalid user password'
+                });
             }
 
         }).catch((error)=>{

@@ -15,7 +15,7 @@ class candidate{
             })
         }).catch((err)=>{
             console.log(err)
-            return res.status(400).send({
+            return res.status(422).send({
                 success: true,
                 message:err
             })

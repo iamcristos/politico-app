@@ -1,28 +1,31 @@
-import office from '../db/officeDb'
+import db from '../models/db'
 
 class officeValidator {
     static createOffice(req,res,next){
-        try {
-            const {name, type} = req.body
-            if (!name) throw "name field required"
-            if (!type) throw 'type required'
-        } catch (error) {
-                return res.status(400).send({
-                    success: false,
-                    status: 400,
-                    msg: error
-                });
-            }
+        req.checkBody('name', 'name is required').notEmpty().trim();
+        req.checkBody('type', 'type is required').notEmpty().trim();
+       
+        let errors = req.validationErros()
+        if(errors) {
+            return res.status(400).send({
+                success: false,
+                status: 400,
+                msg: error
+            });
+        }
         next()
     }
 
     static getAllOffice(req,res,next) {
-        if (office.length === 0) {
-            return res.status(200).send({
-                success: true,
-                message: 'There are no registerd political parties'
-            })
-        }
+        const text = 'SELECT * from Office';
+        db.query(text).then((office)=>{
+            if (office.rowCount === 0) {
+                return res.status(200).send({
+                    success: true,
+                    message: 'There are no registerd political offices'
+                })
+            }
+        })
         next()
     }
 

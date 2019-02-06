@@ -2,19 +2,19 @@ import party from '../db/partyDb'
 
 class partyValidator {
     static createParty(req,res,next){
-        try {
-            const {name, hqAddress, logourl} = req.body
-            if (!name) throw "name field required"
-            if (!hqAddress) throw 'hqAddress required'
-            if (!logourl) throw 'logourl is required'
-            next()
-        } catch (error) {
-                return res.status(400).send({
-                    success: false,
-                    status: 400,
-                    msg: error
-                });
-            }
+        req.checkBody('name', 'name is required').notEmpty().trim();
+        req.checkBody('hqAddress', 'hqAddress is required').notEmpty().trim();
+        req.checkBody('logourl', 'logourl is required').notEmpty().trim();
+       
+        let errors = req.validationErros()
+        if(errors) {
+            return res.send({
+                success: false,
+                status: 400,
+                msg: error
+            });
+        }
+        next()
     }
 
     static getAPoliticalParty(req,res,next){
