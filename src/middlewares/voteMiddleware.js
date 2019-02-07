@@ -1,8 +1,8 @@
 class voteValidation{
     static vote(req,res,next){
-        req.checkBody('candidate', 'kindly insert a valid candidate').notEmpty().trim();
-        req.checkBody('office', 'kindly insert a valid office').notEmpty().trim();
-        req.checkBody('voter', 'kindly insert a valid voter').notEmpty().trim();
+        req.checkBody('candidate', 'kindly insert a valid candidate').notEmpty().trim().isNumeric().withMessage('must be a number');
+        req.checkBody('office', 'kindly insert a valid office').notEmpty().trim().isNumeric().withMessage('must be a number');
+        req.checkBody('voter', 'kindly insert a valid voter').notEmpty().trim().isNumeric().withMessage('must be a number');
 
         let errors= req.validationErrors();
 

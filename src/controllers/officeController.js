@@ -1,11 +1,11 @@
 import office from '../db/officeDb';
-import db from '../models/db'
+
 
 class officeController {
     static createOffice(req, res) {
       const {name, type} = req.body;
 
-      const text = 'INSERT INTO Office(name,type) VALUES($1,$2)';
+      const text = 'INSERT INTO Office(name,type) VALUES($1,$2) RETURNING *';
       const values = [name,type];
 
       db.query(text,values)
@@ -30,7 +30,7 @@ class officeController {
         .then((office)=>{
           return res.status(200).send({
             success: true,
-            office: office.rows[0]
+            office: office.rows
           })
         }).catch((err)=>{
           return res.status(400).send({
@@ -43,9 +43,10 @@ class officeController {
     static getASpecificOffice(req,res) {
       const id = req.params.id
       const Id= parseInt(id)
-      const text = `SELECT * FROM Office WHERE id = ${Id} RETURNING *`
+      const text = `SELECT * FROM Office WHERE id = $1 `
+      const values = [Id]
 
-      db.query(text).then((office)=>{
+      db.query(text,values).then((office)=>{
         return res.status(200).send({
           success: true,
           message: office.rows[0]

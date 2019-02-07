@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 
 dotenv.config()
 let connection;
-if (process.env.NODE_ENV === 'test') {
+if (process.env.NODE_ENV==='test') {
     connection = {
         connectionString: process.env.test  
       }

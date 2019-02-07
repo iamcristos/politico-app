@@ -20,7 +20,7 @@ db.query(createUser).then((user)=>{
 
 const createParty= `CREATE TABLE IF NOT EXISTS Party(
     id SERIAL PRIMARY KEY,
-    name VARCHAR(225) not null,
+    name  VARCHAR(225) UNIQUE not null,
     hqAddress VARCHAR(225) not null,
     logourl VARCHAR(225) not null
 )`
@@ -33,7 +33,7 @@ console.log(err.stack)
 
 const createOffice= `CREATE TABLE IF NOT EXISTS Office(
     id SERIAL PRIMARY KEY,
-    name VARCHAR(225) not null,
+    name  VARCHAR(225) UNIQUE not null,
     type VARCHAR(225) not null
 );`
 

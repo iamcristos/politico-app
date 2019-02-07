@@ -6,32 +6,32 @@ import db from '../src/models/db'
 
 const request = supertest;
 
-describe('/CREATE POLITICAL PARTY', () => {
-  it('should create a political party', (done) => {
-    const body = {
-       name: 'PPP', hqAddress: 'Tafawa road', logourl: 'link',
-    };
+// describe('/CREATE POLITICAL PARTY', () => {
+//   it('should create a political party', (done) => {
+//     const body = {
+//        name: 'PPP', hqAddress: 'Tafawa road', logourl: 'link',
+//     };
     
-    request(app)
-      .post('/api/v1/parties')
-      .send(body)
-      .expect(201)
-      // .expect((result) => {
-      //   console.log(result)
-      //   // expect(result.body.party).toEqual(body);
-      // })
-      .end(done);
-  });
+//     request(app)
+//       .post('/api/v1/parties')
+//       .send(body)
+//       .expect(201)
+//       // .expect((result) => {
+//       //   console.log(result)
+//       //   return expect(result.body.party).toEqual(body);
+//       // })
+//       .end(done);
+  // });
 
-  it('should not create a political party', (done) => {
-    const party = {};
-    request(app)
-      .post('/api/v1/parties')
-      .send(party)
-      .expect(400)
-      .end(done);
-  });
-});
+//   it('should not create a political party', (done) => {
+//     const party = {};
+//     request(app)
+//       .post('/api/v1/parties')
+//       .send(party)
+//       .expect(400)
+//       .end(done);
+//   });
+// });
 
 // describe('/GET ALL PARTIES', ()=>{
 //   it('should return all political party', (done)=>{
