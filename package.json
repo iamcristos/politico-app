@@ -4,7 +4,7 @@
   "description": "A web App that users can vote ",
   "main": "app.js",
   "scripts": {
-    "start": "babel-node /src/app.js",
+    "start": "babel-node src/app.js",
     "start-dev": "nodemon src/app.js --exec babel-node --",
     "test": "cross-env NODE_ENV=test nyc mocha --timeout 4000 --require @babel/register ./test/**/*.js --exit",
     "migrate": "babel-node src/migration/create.js",
