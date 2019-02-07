@@ -6,7 +6,7 @@
   "scripts": {
     "start": "babel-node /src/app.js",
     "start-dev": "nodemon src/app.js --exec babel-node --",
-    "test": "cross-env NODE_ENV=test mocha --timeout 4000 --require @babel/register ./test/**/*.js --exit",
+    "test": "cross-env NODE_ENV=test nyc mocha --timeout 4000 --require @babel/register ./test/**/*.js --exit",
     "migrate": "babel-node src/migration/create.js",
     "test-migrate": "npm run migrate && npm run test"
   },
@@ -32,9 +32,11 @@
     "supertest": "^3.4.2"
   },
   "devDependencies": {
+    "coveralls": "^3.0.2",
     "cross-env": "^5.2.0",
     "eslint": "^5.12.1",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.16.0"
+    "eslint-plugin-import": "^2.16.0",
+    "nyc": "^13.2.0"
   }
 }

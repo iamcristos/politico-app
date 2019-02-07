@@ -1,5 +1,4 @@
 import db from '../models/db'
-import bcrypt from 'bcryptjs';
 import passwordHash from 'password-hash'
 import jwt from 'jsonwebtoken'
 

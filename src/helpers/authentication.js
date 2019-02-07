@@ -18,8 +18,10 @@ class  aunthenticate{
           try {
             console.log(token)
             const verify= await jwt.verify(token,'politico app');
-            const text= 'SELECT * FROM users WHERE id= $1, email= $2';
-            const values= [verify.id,verify.email]
+            console.log(verify)
+            const text= 'SELECT * FROM Users WHERE id= $1 ';
+            console.log(text)
+            const values= [verify]
             const {rows}= await db.query(text,values)
             console.log(rows)
             if (!rows[0]) {
@@ -30,7 +32,7 @@ class  aunthenticate{
             next()
           } catch (error) {
               return res.status(400).send({
-                  error: 'invalid token'
+                  error: error
               });
           }
     }

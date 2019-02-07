@@ -4,7 +4,7 @@ import db from '../models/db';
 class userMiddleware{
     static signUpValidate(req,res,next){
         
-        const {firstname, lastname, othername, email,phoneNumber, passportUrl ,password,} = req.body;
+        const {firstname, lastname, othername, email,phoneNumber, passportUrl ,password,passord2} = req.body;
         req.checkBody('firstname', 'first name is required').notEmpty().trim();
         req.checkBody('lastname', 'last name is required').notEmpty().trim();
         req.checkBody('othername', 'other name is required').notEmpty().trim();
@@ -14,14 +14,14 @@ class userMiddleware{
         req.checkBody('passportUrl', 'passport Url is required').notEmpty().trim();
         req.checkBody('password', 'password is required').notEmpty();
         req.checkBody('password', 'password must be above 5').isLength({ min: 6 });
-        req.checkBody('password2', 'reuired').notEmpty().equals(req.body.password);
+        req.checkBody('password2', 'reqired').equals(password);
         
         let errors= req.validationErrors();
 
         if (errors){
             return res.status(400).send({
                 success: false,
-                message: errors
+                message: errors[0].msg
             })
         }
 
@@ -31,7 +31,7 @@ class userMiddleware{
 
     static signInValidate(req,res,next){
         const {email , password} = req.body;
-        req.checkBody('email', 'kindly input email used in registering').notEmpty().trim();
+        req.checkBody('email', 'kindly input email used in registering').notEmpty().trim().isEmail().withMessage('input a valid email address');
         req.checkBody('password', 'Kindly insert your password').notEmpty();
 
         let errors = req.validationErrors();
