@@ -6,12 +6,13 @@ class partyValidator {
         req.checkBody('hqAddress', 'hqAddress is required').notEmpty().trim();
         req.checkBody('logourl', 'logourl is required').notEmpty().trim();
        
-        let errors = req.validationErros()
+        let errors= req.validationErrors();
+
         if(errors) {
             return res.send({
                 success: false,
                 status: 400,
-                msg: error
+                msg: errors
             });
         }
         next()

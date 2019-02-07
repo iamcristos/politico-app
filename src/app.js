@@ -6,6 +6,7 @@ import officeRouter from './routes/officeRouter';
 import userRouter from './routes/userRouter';
 import candidateRouter from './routes/candidateRouter';
 import voteRouter from './routes/voteRouter';
+import resultRouter from './routes/resultRouter';
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use(officeRouter);
 app.use(userRouter);
 app.use(candidateRouter);
 app.use(voteRouter);
+app.use(resultRouter);
 
 
 

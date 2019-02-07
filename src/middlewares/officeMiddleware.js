@@ -2,15 +2,15 @@ import db from '../models/db'
 
 class officeValidator {
     static createOffice(req,res,next){
-        req.checkBody('name', 'name is required').notEmpty().trim();
-        req.checkBody('type', 'type is required').notEmpty().trim();
+        req.checkBody('name', 'name is required').notEmpty().trim().isNumeric().withMessage('must be a number');
+        req.checkBody('type', 'type is required').notEmpty().trim().isNumeric().withMessage('must be a number');
        
-        let errors = req.validationErros()
+        let errors= req.validationErrors();
         if(errors) {
             return res.status(400).send({
                 success: false,
                 status: 400,
-                msg: error
+                msg: errors
             });
         }
         next()
@@ -44,3 +44,4 @@ class officeValidator {
 }
 
 export default officeValidator;
+
