@@ -7,11 +7,11 @@ const router = express.Router();
 
 const versionedEndPoint = '/api/v1/parties';
 
-router.post(versionedEndPoint, authenticate,partyValidator.createParty , partyController.createParty);
-router.get(versionedEndPoint, authenticate, partyController.getAllParties);
-router.get(`${versionedEndPoint}/:id`, authenticate, partyController.getASpecificParty);
-router.patch(`${versionedEndPoint}/:id`, authenticate,partyValidator.editAParty, partyController.editAParty);
-router.delete(`${versionedEndPoint}/:id`, authenticate,partyController.deleteAParty);
+router.post(versionedEndPoint, partyValidator.createParty , partyController.createParty);
+router.get(versionedEndPoint, authenticate.verifyToken , partyController.getAllParties);
+router.get(`${versionedEndPoint}/:id`,  partyController.getASpecificParty);
+router.patch(`${versionedEndPoint}/:id`, partyValidator.editAParty, partyController.editAParty);
+router.delete(`${versionedEndPoint}/:id`, partyController.deleteAParty);
 
 
 export default router;

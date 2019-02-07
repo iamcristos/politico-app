@@ -24,11 +24,11 @@ class PartyController {
   }
 
   static getAllParties(req, res) {
-    const text = 'SELECT * from Party';
+    const text = 'SELECT * from Party ';
     db.query(text).then((party)=>{ 
       return res.status(200).send({
       success: true,
-      party : party.rows[0]
+      party : party.rows
         })
       }).catch((err)=>{
         return res.status(400).send({
@@ -60,47 +60,46 @@ class PartyController {
     const id = (req.params.id);
     const Id = parseInt(id)
     const {name} = req.body
-    const text = `UPDATE Party SET name = ${name} WHERE id = ${Id} `
+    const text = `UPDATE Party SET name = $1 WHERE id = $2 RETURNING *`
+    const values = [name,Id]
     
-    db.query(text).then((party)=>{
+    db.query(text,values).then((party)=>{
       return res.status(200).send({
         success: true,
-        message: party.rows[0]
+        message: party.rows
       })
     }).catch((err)=>{
-      console.log(err)
-      return res.status(404).send({
-        success: false,
-        message:"party dont exist"
-      })
-    })
+        return res.status(404).send({
+          success: false,
+          message:"party dont exist"
+        })
+      });
         
-      } 
+    } 
     
     
   
 
   static deleteAParty(req,res){
     const id = parseInt(req.params.id);
-    try {
-      party.find((item)=>{
-        if (item.id === id) {
-          party.splice(id-1, 1)
-          return res.status(200).send({
-            success:true,
-            message:'Party succesfully deleted',
-            party: item
-          })
-        } 
-      }) 
-      }   catch (error) {
-          return res.status(404).send({
+    const text = `DELETE FROM Party WHERE id = $1 RETURNING * ` 
+    const values= [id]
+    
+    db.query(text,values).then((party)=>{
+      return res.status(200).send({
+        success:true,
+        message:'Party succesfully deleted',
+        party: party.rows
+      })
+    }).catch((error)=>{
+        return res.status(404).send({
           success: false,
           message: 'Party dont exist'
-      })
+        })
+    })
+          
     }
-  };
-}
+  }
 
 export default PartyController
 

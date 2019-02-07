@@ -17,7 +17,7 @@ class candidate{
             console.log(err)
             return res.status(422).send({
                 success: true,
-                message:err
+                message:'invalid input kindly input a registered candidate for an office'
             })
         });
     }

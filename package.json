@@ -6,8 +6,9 @@
   "scripts": {
     "start": "babel-node /src/app.js",
     "start-dev": "nodemon src/app.js --exec babel-node --",
-    "test": "cross-env NODE_ENV=test mocha --require @babel/register ./test/**/*.js --exit",
-    "migrate": "babel-node src/migration/create.js"
+    "test": "cross-env NODE_ENV=test mocha --timeout 4000 --require @babel/register ./test/**/*.js --exit",
+    "migrate": "babel-node src/migration/create.js",
+    "test-migrate": "npm run migrate && npm run test"
   },
   "author": "",
   "license": "ISC",
