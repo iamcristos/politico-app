@@ -41,9 +41,9 @@ class userMiddleware{
 
         const errMsg=[];
         let errors= req.validationErrors();
-        errors.map((err)=>{
-            errMsg.push(err.msg)
-        })
+        for(let i=0;i<errors.length;i++){
+            errMsg.push(errors[i].msg)
+        }
 
         if(errors){
             return res.status(401).send({

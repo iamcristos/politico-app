@@ -18,20 +18,20 @@ class  aunthenticate{
         const verify = jwt.verify(token, 'politico app')
         const text= 'SELECT * FROM Users WHERE id= $1'
         db.query(text,[verify]).then((user)=>{
-            if (user.rows.isAdmin === false){
+            console.log(user.rows[0].isAdmin === false)
+            if (!(user.rows[0].isadmin)){
                 return res.send({
                     status: 401,
                     message: 'unathourized request'
                 })
             }
+            next()
         }).catch((err)=>{
             return res.send({
                 status:400,
                 message: 'invalid token'
             })
         })
-
-        next()
         
     }
 
@@ -55,6 +55,7 @@ class  aunthenticate{
                     message: 'invalid user token'
                 })
             }
+            next()
         }).catch((err)=>{
             return res.send({
                 status:401,

@@ -1,6 +1,7 @@
 import express from 'express'
 import resultController from '../controllers/voteCandidate'
 import endpoint from '../helpers/versionEndpoint'
+import aunthenticate from '../helpers/authentication';
 
 const router = express.Router();
 
