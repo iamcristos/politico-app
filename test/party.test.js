@@ -22,17 +22,18 @@ describe('/CREATE POLITICAL PARTY', () => {
       // })
       .end(done);
   });
-})
 
-//   it('should not create a political party', (done) => {
-//     const party = {};
-//     request(app)
-//       .post('/api/v1/parties')
-//       .send(party)
-//       .expect(400)
-//       .end(done);
-//   });
-// });
+
+  // it('should not create a political party', (done) => {
+  //   const party = {};
+  //   request(app)
+  //     .post('/api/v1/parties')
+  //     .send(party)
+  //     .expect(400)
+  //     .end(done);
+  // });
+});
+
 
 // describe('/GET ALL PARTIES', ()=>{
 //   it('should return all political party', (done)=>{

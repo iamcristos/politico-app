@@ -10,19 +10,21 @@ class userController{
         const values = [firstname,lastname,othername,email,phoneNumber,passportUrl,hashPassword];
         db.query(text,values).then((user)=>{
             return res.status(201).send({
+                status:201,
                 success: true,
                 data: [{
                     token : jwt.sign(user.rows[0].id, 'politico app'),
                     user: {
-                            firstname: user.rows[0].firstname,
-                            email: user.rows[0].email,
-                            phoneNumber: user.rows[0].phoneNumber,
-                            passportUrl: user.rows[0].passportUrl
+                            firstname: user.rows.firstname,
+                            email: user.rows.email,
+                            phoneNumber: user.rows.phoneNumber,
+                            passportUrl: user.rows.passportUrl
                         }
                 }],
             })
         }).catch((err)=>{
             return res.status(400).send({
+                status:400,
                 success: false,
                 message: err
             })
@@ -37,20 +39,22 @@ class userController{
             let confirmPassword= passwordHash.verify(password, user.rows[0].password);
             if (confirmPassword === true){
                 return res.status(200).send({
+                    status:200,
                     success : true,
                     data: [{
-                        token : jwt.sign(user.rows[0].id, 'politico app'),
+                        token : jwt.sign(user.rows.id, 'politico app'),
                         user: {
-                                id: user.rows[0].id,
-                                firstname: user.rows[0].firstname,
-                                email: user.rows[0].email,
-                                phoneNumber: user.rows[0].phoneNumber,
-                                passportUrl: user.rows[0].passportUrl
+                                id: user.rows.id,
+                                firstname: user.rows.firstname,
+                                email: user.rows.email,
+                                phoneNumber: user.rows.phoneNumber,
+                                passportUrl: user.rows.passportUrl
                         }
                     }],
                 })
             } else {
                 return res.status(401).send({
+                    status:401,
                     success: false,
                     message: 'invalid user password'
                 });
@@ -59,6 +63,7 @@ class userController{
         }).catch((error)=>{
             console.log(error)
             return res.status(400).send({
+                status:400,
                 success: false,
                 message: 'error'
             })

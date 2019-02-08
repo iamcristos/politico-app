@@ -9,16 +9,18 @@ class voteCandidate{
 
         db.query(text,values).then((votes)=>{
             return res.status(200).send({
+                status:200,
                 success: true,
                 data: [{
-                    office: votes.rows[0].office,
-                    candidate: votes.rows[0].candidate,
-                    voter: votes.rows[0].voter
+                    office: votes.rows.office,
+                    candidate: votes.rows.candidate,
+                    voter: votes.rows.voter
                 }]
             })
 
         }).catch((err)=>{
             return res.status(400).send({
+                status:400,
                 success: false,
                 message: "invalid input"
             })

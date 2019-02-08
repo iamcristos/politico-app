@@ -16,12 +16,17 @@ class userMiddleware{
         req.checkBody('password', 'password must be above 5').isLength({ min: 6 });
         req.checkBody('password2', 'reqired').equals(password);
         
+        const errMsg=[];
         let errors= req.validationErrors();
+        for(let i=0;i<errors.length;i++){
+            errMsg.push(errors[i].msg)
+        }
 
         if (errors){
             return res.status(400).send({
+                status:400,
                 success: false,
-                message: errors[0].msg
+                message: errMsg
             })
         }
 
@@ -34,12 +39,17 @@ class userMiddleware{
         req.checkBody('email', 'kindly input email used in registering').notEmpty().trim().isEmail().withMessage('input a valid email address');
         req.checkBody('password', 'Kindly insert your password').notEmpty();
 
-        let errors = req.validationErrors();
+        const errMsg=[];
+        let errors= req.validationErrors();
+        errors.map((err)=>{
+            errMsg.push(err.msg)
+        })
 
         if(errors){
             return res.status(401).send({
+                status: 401,
                 success: false,
-                message: errors
+                message: errMsg
             })
         }
         next()

@@ -1,10 +1,11 @@
 import jwt from 'jsonwebtoken';
 import db from '../models/db';
+import { error } from 'util';
 
 
 class  aunthenticate{
 
-    static async verifyToken(req,res,next){
+    static  verifyToken(req,res,next){
         const token = req.headers['x-access-token'];
         
         if(!token) {
@@ -14,27 +15,54 @@ class  aunthenticate{
                 message: 'token required'
             });
         }
+        const verify = jwt.verify(token, 'politico app')
+        const text= 'SELECT * FROM Users WHERE id= $1'
+        db.query(text,[verify]).then((user)=>{
+            if (user.rows.isAdmin === false){
+                return res.send({
+                    status: 401,
+                    message: 'unathourized request'
+                })
+            }
+        }).catch((err)=>{
+            return res.send({
+                status:400,
+                message: 'invalid token'
+            })
+        })
+
+        next()
         
-        //   try {
-        //     console.log(token)
-        //     const verify= await jwt.verify(token,'politico app');
-        //     console.log(verify)
-        //     const text= 'SELECT * FROM Users WHERE id= $1 ';
-        //     console.log(text)
-        //     const values= [verify]
-        //     const {rows}= await db.query(text,values)
-        //     console.log(rows)
-        //     if (!rows[0]) {
-        //         return res.status(400).send({
-        //             error: "invalid user"
-        //         })
-        //     }
-        //     next()
-        //   } catch (error) {
-        //       return res.status(400).send({
-        //           error: error
-        //       });
-        //   }
+    }
+
+    static verifyUser(req,res,next) {
+        const token = req.headers['x-access-token'];
+        
+        if(!token) {
+            console.log('hey')
+            return res.status(401).send({
+                success: false,
+                message: 'token required'
+            });
+        }
+        const verify = jwt.verify(token, 'politico app')
+        const text= 'SELECT * FROM Users WHERE id= $1'
+        db.query(text,[verify]).then((user)=>{
+            if (!user) {
+                return res.send({
+                    status:401,
+                    success:false,
+                    message: 'invalid user token'
+                })
+            }
+        }).catch((err)=>{
+            return res.send({
+                status:401,
+                success:false,
+                message: 'invalid user token'
+            })
+
+        })
     }
 }
 
