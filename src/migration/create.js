@@ -45,7 +45,7 @@ db.query(createOffice).then((office)=>{
 
 const createCandidate= `CREATE TABLE IF NOT EXISTS Candidate(
     id SERIAL UNIQUE,
-    candidate INT NOT NULL REFERENCES Users(id) ON DELETE CASCADE,
+    candidate INT UNIQUE NOT NULL REFERENCES Users(id) ON DELETE CASCADE,
     office INT NOT null REFERENCES Office(id)  ON DELETE CASCADE,
     party INT  not null REFERENCES Party(id)  ON DELETE CASCADE,
     registered TIMESTAMP DEFAULT NOW(),
@@ -62,7 +62,7 @@ const createVote= `CREATE TABLE IF NOT EXISTS Vote(
     id SERIAL UNIQUE,
     candidate INT NOT NULL REFERENCES Candidate(id) ON DELETE CASCADE,
     office INT NOT null REFERENCES Office(id)  ON DELETE CASCADE,
-    voter INT not null REFERENCES Users(id)  ON DELETE CASCADE,
+    voter INT UNIQUE not null REFERENCES Users(id)  ON DELETE CASCADE,
     voted TIMESTAMP DEFAULT NOW(),
     PRIMARY KEY (id,candidate,office, voter)
 )`

@@ -12,9 +12,9 @@ class voteCandidate{
                 status:200,
                 success: true,
                 data: [{
-                    office: votes.rows.office,
-                    candidate: votes.rows.candidate,
-                    voter: votes.rows.voter
+                    office: votes.rows[0].office,
+                    candidate: votes.rows[0].candidate,
+                    voter: votes.rows[0].voter
                 }]
             })
 
@@ -22,7 +22,7 @@ class voteCandidate{
             return res.status(400).send({
                 status:400,
                 success: false,
-                message: "invalid input"
+                message: "You cannot vote more than once",
             })
         });
     }

@@ -20,7 +20,6 @@ class officeController {
            status:422,
            success: false,
            message: 'political office not created',
-           err
          })
       });
     }

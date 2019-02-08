@@ -16,10 +16,10 @@ class candidate{
             })
         }).catch((err)=>{
             console.log(err)
-            return res.status(422).send({
-                status:422,
+            return res.status(400).send({
+                status:400,
                 success: true,
-                message:'invalid input kindly input a registered candidate for an office'
+                message:'Candidate Already registered'
             })
         });
     }

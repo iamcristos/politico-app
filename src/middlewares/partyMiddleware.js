@@ -21,12 +21,20 @@ class partyValidator {
         next()
     }
 
-    static getAPoliticalParty(req,res,next){
-    const id = req.params.id
-    const Id= parseInt(id)
-    
-    
+    static getAllParty(req,res,next) {
+        const text = 'SELECT * from Party';
+        db.query(text).then((party)=>{
+            if (party.rowCount === 0) {
+                return res.status(200).send({
+                    status:200,
+                    success: true,
+                    message: 'There are no registerd political party'
+                })
+            }
+        })
+        next()
     }
+
 
     static editAParty(req,res,next) {
         try {

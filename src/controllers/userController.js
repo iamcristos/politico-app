@@ -14,7 +14,7 @@ class userController{
                 status:201,
                 success: true,
                 data: [{
-                    token : jwt.sign(user.rows[0].id, 'politico app'),
+                    token : jwt.sign({userId:user.rows[0].id, userEmail:user.rows[0].email}, 'politico app'),
                     user: {
                             firstname: user.rows[0].firstname,
                             lastname: user.rows[0].lastname,
@@ -46,7 +46,7 @@ class userController{
                     status:200,
                     success : true,
                     data: [{
-                        token : jwt.sign(user.rows[0].id, 'politico app'),
+                        token : jwt.sign({userId:user.rows[0].id, userEmail:user.rows[0].email}, 'politico app'),
                         user: {
                                 id: user.rows[0].id,
                                 firstname: user.rows[0].firstname,
