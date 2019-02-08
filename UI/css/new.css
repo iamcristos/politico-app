@@ -20,7 +20,7 @@ nav{
     display: flex;
     width: 100%;
     height: 50px;
-    background-color: blue;
+    background-color: black;
     padding: 0 20px;
     z-index: 1;
 }
@@ -49,8 +49,8 @@ li a{
   z-index: 1; 
   top: 50px; 
   left: 0;
-  background-color: #93c2df; 
-  /* background-color: blue; */
+  background-color: rgba(0, 0, 0, 0.3); 
+  /* background-color: black; */
   /* border-top:1px solid white; */
   overflow-x: hidden; 
   padding-top: 20px;
@@ -61,7 +61,7 @@ li a{
 }
 #dasboard a{
     /* border-bottom: 1px solid white; */
-    color: blue;
+    color: black;
 }
 
 #pic{
@@ -135,7 +135,7 @@ h4{
 
 .vote{
     display: flex;
-    flex-direction: column;
+    /*flex-direction: column;*/
     margin:10px;
     padding: 5px;
     margin-top: 5%;
@@ -146,12 +146,12 @@ form{
     margin: 20px;
     padding: 10px;
     width: 300px;
-    background: #93c2df;
+    background: rgba(0, 0, 0, 0.3);
     border-radius: 10px;
 }
 
 form:hover{
-    font-weight: bolder;
+    /*font-weight: bolder;*/
 }
 
 .h2{
@@ -178,8 +178,8 @@ button{
 }
 
 button:hover{
-    border: 3px;
-    font-size: 15px;
+    /*border: 3px;*/
+    /*font-size: 15px;*/
     font-weight: bolder;
 }
 
@@ -225,7 +225,30 @@ td{
     display: block
 }
 
-@media screen and (max-width: 700px) {
+.grid-party{
+    display: grid;
+    margin-left: 20%;
+    margin-top: 10%;
+    grid-row-gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-columns: 100px;
+    grid-auto-rows: 200px;     
+}
+
+.item-grid{
+    border: 1px solid rgba(0,0,0,.5);
+    margin: 10px;
+    padding: 10px;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.grid{
+    color:rgb(227, 227, 250);
+    display: inline;
+    font-size: 10px
+}
+@media screen and (max-width: 1024px) {
     nav{
         position: relative;
     }
@@ -239,22 +262,25 @@ td{
     div.content, {margin-left: 0;}
 
     #view-party{
-        margin-left: 1%
+        margin-left: 1%;
     }
 
     .vote{
-        margin-left: 3%
+        margin-left: 3%;
+        flex-direction: column;
     }
 
     form {
         margin-left: 3%;
     }
+
   }
   
   /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
   @media screen and (max-width: 400px) {
     #dasboard a {
-      text-align: center;
-      float: none;
+        text-align: center;
+        float: none;
     }
+
   }

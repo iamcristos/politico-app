@@ -9,7 +9,7 @@ nav{
     width: auto;
     height: 30px;
     padding: 5px;
-    background-color: blue;
+    background-color: black;
 }
 
 nav li {
@@ -46,7 +46,7 @@ li a{
 }
 
 a{
-    color: blue;
+    color: black;
 }
 
 h2{
@@ -57,7 +57,7 @@ h2{
 }
 
 .form-group{
-    border:1px solid blue;
+    border:1px solid rgba(0, 0, 0, .5);
     padding: 10px;
     margin: auto;
     margin-top: 10%;
@@ -74,7 +74,7 @@ input{
     margin: 10px;
     padding-left: 5px;
     border-radius: 5px;
-    border: 1px solid blue
+    border: 1px solid rgba(0, 0, 0, .5);
     /* background-color: red */
 }
 
@@ -84,7 +84,7 @@ button{
     margin:10px;
     cursor: pointer;
     letter-spacing: 2px;
-    background-color: blue;
+    background-color: black;
     border: none;
     color: white
 }

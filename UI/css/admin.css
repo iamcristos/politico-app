@@ -20,7 +20,7 @@ nav{
     display: flex;
     width: 100%;
     height: 50px;
-    background-color: blue;
+    background-color:black;
     padding: 0 20px;
     z-index: 1;
 }
@@ -49,7 +49,7 @@ li a{
   z-index: 1; 
   top: 50px; 
   left: 0;
-  background-color: #93c2df; 
+  background-color: rgba(0, 0, 0, 0.3); 
   overflow-x: hidden; 
   padding-top: 20px;
 }
@@ -59,7 +59,7 @@ li a{
 }
 #dasboard a{
     /* border-bottom: 1px solid white; */
-    color: blue;
+    color: black;
 }
 
 #pic{
@@ -112,7 +112,7 @@ h3{
 }
 
 .item-grid{
-    border: 1px solid blue;
+    border: 1px solid rgba(0,0,0,.5);
     margin: 10px;
     padding: 10px;
     padding-top: 30px;
@@ -120,7 +120,7 @@ h3{
 }
 
 .grid{
-    color:blue;
+    color:red;
     display: inline;
     font-size: 10px
 }

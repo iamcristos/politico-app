@@ -10,7 +10,7 @@ nav{
     width: auto;
     height: 40px;
     padding: 5px;
-    background-color:blue;
+    background-color:black;
 }
 
 nav li {
@@ -35,7 +35,7 @@ li a{
 }
 #form-div{
     margin: auto;
-    border: 1px solid rgba(0, 0, 255, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.5);
     width: 300px;
     border-radius: 20px;
     padding: 10px;
@@ -46,7 +46,7 @@ li a{
     
 }
 h2{
-    color: blue;
+    color: black;
 }
 
 .form{
@@ -62,14 +62,14 @@ input{
     margin: 10px;
     padding: 5px 10px;
     border-radius: 5px;
-    border: 1px solid blue
+    border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 
 select{
     background: transparent;
     line-height: 1;
-    border: 1px solid blue ;
+    border: 1px solid rgba(0, 0, 0, 0.5) ;
     padding: 10px;
     border-radius: 0;
     width: 75%;
@@ -84,7 +84,7 @@ button{
     padding: 10px;
     cursor: pointer;
     letter-spacing: 2px;
-    background-color: blue;
+    background-color: black;
     border: none;
     color: white
 }
