@@ -4,11 +4,11 @@
   "description": "A web App that users can vote ",
   "main": "app.js",
   "scripts": {
-    "start": "babel-node /src/app.js",
+    "start": "babel-node src/app.js",
     "start-dev": "nodemon src/app.js --exec babel-node --",
-    "test": "cross-env NODE_ENV=test mocha --timeout 4000 --require @babel/register ./test/**/*.js --exit",
+    "test": "npm --reporter=html --reporter=text run test-migrate && cross-env NODE_ENV='test' nyc mocha --require @babel/register ./test/**/*.js --exit --timeout 6000",
     "migrate": "babel-node src/migration/create.js",
-    "test-migrate": "npm run migrate && npm run test"
+    "test-migrate": "cross-env NODE_ENV='test' babel-node src/migration/create"
   },
   "author": "",
   "license": "ISC",
@@ -32,9 +32,12 @@
     "supertest": "^3.4.2"
   },
   "devDependencies": {
+    "babel-polyfill": "^6.26.0",
+    "coveralls": "^3.0.2",
     "cross-env": "^5.2.0",
     "eslint": "^5.12.1",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.16.0"
+    "eslint-plugin-import": "^2.16.0",
+    "nyc": "^13.2.0"
   }
 }

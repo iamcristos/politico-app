@@ -9,6 +9,7 @@ class voteCandidate{
 
         db.query(text,values).then((votes)=>{
             return res.status(200).send({
+                status:200,
                 success: true,
                 data: [{
                     office: votes.rows[0].office,
@@ -19,8 +20,9 @@ class voteCandidate{
 
         }).catch((err)=>{
             return res.status(400).send({
+                status:400,
                 success: false,
-                message: "invalid input"
+                message: "You cannot vote more than once",
             })
         });
     }

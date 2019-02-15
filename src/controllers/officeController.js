@@ -1,6 +1,4 @@
-import office from '../db/officeDb';
-
-
+import db from '../models/db'
 class officeController {
     static createOffice(req, res) {
       const {name, type} = req.body;
@@ -11,15 +9,16 @@ class officeController {
       db.query(text,values)
         .then((office)=>{
           return res.status(201).send({
+            status:201,
             success: true,
             message: 'office created succesfully',
             office : office.rows[0]
         }) 
       }).catch((err)=>{
          return res.status(422).send({
+           status:422,
            success: false,
            message: 'political office not created',
-           err
          })
       });
     }
@@ -29,11 +28,13 @@ class officeController {
       db.query(text)
         .then((office)=>{
           return res.status(200).send({
+            status:200,
             success: true,
             office: office.rows
           })
         }).catch((err)=>{
           return res.status(400).send({
+            status:400,
             success: false,
             message: "error"
           })
@@ -47,12 +48,21 @@ class officeController {
       const values = [Id]
 
       db.query(text,values).then((office)=>{
+        if(office.rowCount === 0){
+          return res.status(404).send({
+            status:404,
+            success: false,
+            message: 'Political office dont exist'
+          })
+        }
         return res.status(200).send({
+          status:200,
           success: true,
           message: office.rows[0]
         })
       }).catch((err)=>{
         return res.status(404).send({
+          status:404,
           success: false,
           message: 'Political office dont exist'
         });

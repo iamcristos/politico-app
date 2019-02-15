@@ -9,15 +9,17 @@ class candidate{
 
         db.query(text,values).then((candidate)=>{
             return res.status(201).send({
+                status:201,
                success: true,
                message: 'Candidate Added',
                data: [candidate.rows[0]] 
             })
         }).catch((err)=>{
             console.log(err)
-            return res.status(422).send({
+            return res.status(400).send({
+                status:400,
                 success: true,
-                message:'invalid input kindly input a registered candidate for an office'
+                message:'Candidate Already registered'
             })
         });
     }
