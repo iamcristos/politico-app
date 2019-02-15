@@ -1,5 +1,4 @@
 import db from '../models/db'
-
 class officeController {
     static createOffice(req, res) {
       const {name, type} = req.body;

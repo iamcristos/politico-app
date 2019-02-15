@@ -11,4 +11,5 @@ router.post(versionedEndPoint, authenticate.verifyToken,officeValidator.createOf
 router.get(versionedEndPoint, authenticate.verifyUser,officeValidator.getAllOffice, officeController.getAllOffice);
 router.get(`${versionedEndPoint}/:id`, authenticate.verifyUser,officeController.getASpecificOffice);
 
+
 export default router

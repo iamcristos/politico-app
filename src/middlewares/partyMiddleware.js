@@ -5,6 +5,7 @@ class partyValidator {
         req.checkBody('hqAddress', 'hqAddress is required').notEmpty().trim();
         req.checkBody('logourl', 'logourl is required').notEmpty().trim();
        
+
         const errMsg=[];
         let errors= req.validationErrors();
         for(let i=0;i<errors.length;i++){

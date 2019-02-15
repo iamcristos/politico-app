@@ -7,4 +7,5 @@ const router = express.Router();
 
 router.get(`${endpoint}:id/result`, resultController.viewResult);
 
+
 export default router
