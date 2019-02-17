@@ -1,0 +1,137 @@
+html{
+    height: 100%;
+}
+
+body{
+    background-image: linear-gradient(rgba(0,0,0,.9), rgba(0,0,0,.3)), url(../images/index.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: sans-serif;
+    height: 100%;
+}
+
+nav{
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+}
+
+nav li {
+    display: flex;
+    margin: 10px;
+    font-size: 150%;
+}
+
+li a, a:visited {
+    text-decoration: none;
+    color:white;
+}
+
+.nav-right{
+    font-size: 10px;    
+    display: flex;
+    margin-left: auto;
+}
+
+li:hover{
+    cursor: pointer;
+}
+
+.home{
+    padding-top: 10%;
+    font-size: 20px;
+    margin: 5%;
+    text-align: center;
+    color:white;
+}
+
+#explore{
+    margin:5px;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    border-color:white;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+#explore:hover{
+    box-shadow: 2px;
+    font-size: 30px;
+
+}
+
+#explore:active{
+    box-shadow: none;
+    top: 6px;
+}
+
+.toggle-btn{
+    transition: all 500ms linear;
+    display: none;	
+}
+
+.toggle-btn span{
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+input{
+    color: white
+}
+
+/* other screen size */
+@media only screen and (max-width: 768px) {
+    body{
+        background-size: cover;
+    }
+    #left{
+        font-size: 150%
+    }
+    nav,.nav-right{
+        flex-direction: column;
+        margin: 3px;
+    }
+    nav li {
+        display: flex;
+        margin: 0px;
+        font-size: 80%;
+    }
+    li{
+        margin:0;
+        padding:0px
+    }
+    .toggle-btn{
+		align-self: flex-end;
+		display: initial;
+        position: absolute;
+        left:80%;
+        cursor: pointer;
+        
+    }
+    .nav-right{
+        /* display: none; */
+        margin-top: 15px;
+        margin-left: auto;
+    }
+    .right {
+        display: none;
+    }
+
+    .show{
+        display: flex;
+    }
+    
+    .home{
+        position: absolute;
+        top:10%;
+        font-size: 20px;
+        color:white;
+    }
+}

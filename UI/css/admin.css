@@ -1,0 +1,157 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%
+}
+
+body{
+    margin: 0px;
+    font-family: sans-serif;
+    height: 100%;
+}
+
+nav{
+    position: fixed;
+    top:0;
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background-color:black;
+    padding: 0 20px;
+    z-index: 1;
+}
+.nav-right{
+    display: flex;
+    margin-left: auto
+}
+
+li{
+    list-style: none;
+    color: white;
+    padding: 10px;
+    margin-top: 7px;
+    font-size: 100%;
+}
+
+li a{
+    color: white;
+    text-decoration: none;
+}
+
+#dasboard{
+  height: 100%; 
+  width: 160px; 
+  position: fixed; 
+  z-index: 1; 
+  top: 50px; 
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3); 
+  overflow-x: hidden; 
+  padding-top: 20px;
+}
+
+#avatar{
+    margin-left: 30px;
+}
+#dasboard a{
+    /* border-bottom: 1px solid white; */
+    color: black;
+}
+
+#pic{
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+h2{
+    font-weight: lighter;
+    margin-bottom: 2px;
+}
+
+h3{
+    font-size: 10px;
+}
+
+a{
+    display: flex;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+  #view-party{
+    margin: auto;
+    margin-top: 10%;
+    margin-left: 15%;  
+}
+
+.grid-party{
+    display: grid;
+    margin-left: 20%;
+    margin-top: 10%;
+    grid-row-gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-columns: 100px;
+    grid-auto-rows: 200px;     
+}
+
+
+.party-image{
+    
+    margin: 10px;
+}
+
+h3{
+    display: inline;
+    text-align: center;
+    
+}
+
+.item-grid{
+    border: 1px solid rgba(0,0,0,.5);
+    margin: 10px;
+    padding: 10px;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.grid{
+    color:red;
+    display: inline;
+    font-size: 10px
+}
+
+@media screen and (max-width: 700px) {
+    nav{
+        position: relative;
+    }
+    #dasboard {
+      width: 100%;
+      height: auto;
+      position: relative;
+      top: 0%;
+    }
+    #dasboard a {float: left;}
+    #view-party {margin-left: 0;}
+
+    #view-party{
+        margin-left: 3%
+    }
+    .grid-party{
+        grid-template-columns: repeat(1, 1fr);
+        margin-left: 3%
+    }
+
+}
+  
+  
+  @media screen and (max-width: 400px) {
+    #dasboard a {
+      text-align: center;
+      float: none;
+    }
+  }

@@ -1,0 +1,119 @@
+html{
+    height: 100%;
+}
+
+body{
+    font-family: sans-serif;
+    height: 100%;
+    margin: 0px;
+}
+nav{
+    margin: 0px;
+    width: auto;
+    height: 40px;
+    padding: 5px;
+    background-color:black;
+}
+
+nav li {
+    color: white;
+    list-style: none;
+    display: inline;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin: 10px
+}
+
+#left{
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+li a, li a:active{
+    text-decoration: none;
+    color: white;
+}
+
+p{  
+    text-align: center
+} 
+
+.form{
+    margin: 10px;
+    text-align: center;
+}
+
+.form-group{
+    border:1px solid rgba(0, 0, 0, .5);
+    padding: 10px;
+    margin: auto;
+    margin-top: 5%;
+    width: 500px;
+    border-radius: 5px;
+    margin-bottom: 2%;
+}
+
+input{
+    width: 70%;
+    height: 40px;
+    margin: 10px;
+    padding-left: 5px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, .5)
+    /* background-color: red */
+}
+
+button{
+    width:70%;
+    height: 30px;
+    margin:10px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    background-color: black;
+    border: none;
+    color: white
+}
+
+button:hover{
+    font-weight: bolder
+}
+
+h2{
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    color: black;
+}
+a{
+    color: black;
+}
+
+@media only screen and (max-width: 768px) {
+    .form-group{
+        width: auto;
+        margin: 20px;
+        margin-top: 5%;
+        /* position: absolute;
+        top: 40%;
+        left: 18%; */
+    }
+
+    input, button{
+        /* width: auto; */
+        text-align: center;
+        margin-left: 0;
+    }
+
+    li{
+        color: white;
+    }
+    
+    h2{
+        margin-top: 1%;
+    }
+
+}

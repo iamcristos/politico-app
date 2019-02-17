@@ -1,0 +1,120 @@
+body{
+    text-align: center;
+    font-family: sans-serif;
+    margin: 0px;
+}
+
+nav{
+    margin: 0px;
+    width: auto;
+    height: 30px;
+    padding: 5px;
+    background-color: black;
+}
+
+nav li {
+    list-style: none;
+    display: inline;
+    margin: 10px;
+    letter-spacing: 2px;
+    font-weight: bold
+}
+.toggle-btn{
+    transition: all 500ms linear;
+    display: none;	
+}
+.toggle-btn span{
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.right {
+    float: right;
+}
+
+#left{
+    float: left;
+}
+
+li a{
+    text-decoration: none;
+    color: white;
+}
+
+a{
+    color: black;
+}
+
+h2{
+    margin: auto;
+    margin-top: 5px;
+    letter-spacing: 1px;
+    color: black;
+}
+
+.form-group{
+    border:1px solid rgba(0, 0, 0, .5);
+    padding: 10px;
+    margin: auto;
+    margin-top: 10%;
+    width: 500px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+
+input{
+    width: 70%;
+    height: 40px;
+    margin: 10px;
+    padding-left: 5px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, .5);
+    /* background-color: red */
+}
+
+button{
+    width:70%;
+    height: 30px;
+    margin:10px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    background-color: black;
+    border: none;
+    color: white
+}
+
+button:hover{
+    font-weight: bolder
+}
+
+@media only screen and (max-width: 768px) {
+    nav{
+        /* margin: auto; */
+    }
+
+    .toggle-btn{
+		align-self: flex-end;
+		display: initial;
+        position: absolute;
+        left:80%;
+        cursor: pointer;
+        
+    }
+
+    .form-group{
+        /* width: 200px; */
+        /* margin: 5px; */
+        width: 70%;
+        margin-top: 20%;
+        /* margin-left: 20% */
+        /* position: absolute;
+        top: 40%;
+        left: 18%; */
+    }
+}
