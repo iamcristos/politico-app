@@ -7,6 +7,8 @@ import userRouter from './routes/userRouter';
 import candidateRouter from './routes/candidateRouter';
 import voteRouter from './routes/voteRouter';
 import resultRouter from './routes/resultRouter';
+import swaggerUi from 'swagger-ui-express';
+import swaggerDocument from '../swagger.yaml';
 
 const app = express();
 
@@ -22,6 +24,7 @@ app.use(userRouter);
 app.use(candidateRouter);
 app.use(voteRouter);
 app.use(resultRouter);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
 
