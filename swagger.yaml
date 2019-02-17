@@ -1,0 +1,81 @@
+swagger: "2.0"
+info: 
+  version: 1.00
+  title: Politico
+  description: A simple web app that allows users to vote a candidate of their choice 
+
+schemes: 
+  https
+host: politicoapplication.herokuapp.com
+basepath: api/v1
+
+paths: 
+  /pet:
+    post: /auth/signup
+      summary: Register new user
+      description: ''
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: The users details that needs to be stored
+          required: true
+          schema:
+            required: 
+              {firstname,lastname,othername,phoneNumber,email,passportUrl,password}
+      responses:
+        '200':
+          description: Registration successful
+        '400':
+          description: Bad request as a result of not correctly filling the form
+      security:
+        - petstore_auth:
+            - 'write:pets'
+            - 'read:pets'
+
+paths: 
+  /pet:
+    post: /auth/signin
+      summary: Login user
+      description: ''
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: The users email and password used for registration
+          required: true
+          schema:
+            required: 
+              {email,password}
+      responses:
+        '200':
+          description: Login was successful
+        '400':
+          description: Bad request as a result of not correctly filling the form
+        '404':
+          description: Email dont exists
+
+paths: 
+  /pet:
+    post: /parties
+      summary: Create political parties
+      description: ''
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: The users email and password used for registration
+          required: true
+          schema:
+            required: 
+              {name,hqAddress,logourl}
+      responses:
+        '201':
+          description: Party was created successfully
+        '400':
+          description: Bad request as a result of not correctly filling the form
+        '400':
+          description: Party already exist
