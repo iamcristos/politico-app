@@ -14,6 +14,11 @@
     </nav>
         <!-- <h1>Kindly Fill in Your Details Correctly</h1>  -->
     <div class="form-group">
+        <div id="error">
+            <ul id="msgErr">
+            </ul>
+
+        </div>
         <h2>Sign Up</h2>
         <form id="form-group">
             <div class="form">
@@ -23,10 +28,16 @@
                 <input type="text" name="lastname" placeholder="Lastname" required>
             </div>
             <div class="form">
+                <input type="text" name="othername" placeholder="othername" required>
+            </div>
+            <div class="form">
                 <input type="email" name="email" placeholder="Email Address" required>
             </div>
             <div class="form">
                 <input type="number" name="phone" placeholder="Phonenumber" required>
+            </div>
+            <div class="form">
+                <input type="text" name="passportUrl" placeholder="PassportUrl" required>
             </div>
             <div class="form">
                 <input type="password" name="password" placeholder="Password" required>

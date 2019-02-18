@@ -1,4 +1,7 @@
-
+fetch('politicoapplication.herokuapp.com/')
+    .then((res)=>{
+        console.log(res.body)
+    })
 let explorebtn= document.getElementById('explore')
 
 explorebtn.addEventListener('click', ()=>{

@@ -9,6 +9,7 @@ import voteRouter from './routes/voteRouter';
 import resultRouter from './routes/resultRouter';
 import swaggerUi from 'swagger-ui-express';
 import swaggerDocument from '../swagger.yaml';
+import chores from 'cores';
 
 const app = express();
 
@@ -17,6 +18,7 @@ const port = process.env.PORT || 3000
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(expressValidator())
+app.use(chores());
 
 app.use(router);
 app.use(officeRouter);
