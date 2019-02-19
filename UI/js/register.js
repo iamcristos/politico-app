@@ -25,6 +25,7 @@ form.addEventListener('submit', (e) => {
     // fetching api
     const data ={firstname,lastname,othername,email,passportUrl,phoneNumber,password,password2}
     const url = 'https://politicoapplication.herokuapp.com/api/v1/auth/signup';
+    // this proxyurl was gotten from stack overflow 
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
     const fetchMethod = {
         method: "POST",
@@ -42,7 +43,6 @@ form.addEventListener('submit', (e) => {
                 let message = data.message
                 const ul = document.getElementById('msgErr');
                 message.map((msg)=>{
-                //    let li = `<li> ${msg}</li>`;
                 let li = document.createElement('li')
                 li.innerText = msg
                    ul.append(li)

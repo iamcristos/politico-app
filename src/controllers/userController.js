@@ -53,7 +53,8 @@ class userController{
                                 lastname:user.rows[0].lastname,
                                 email: user.rows[0].email,
                                 phoneNumber: user.rows[0].phonenumber,
-                                passportUrl: user.rows[0].passporturl
+                                passportUrl: user.rows[0].passporturl,
+                                isadmin: user.rows[0].isadmin
                         }
                     }],
                 })

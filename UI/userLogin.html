@@ -14,13 +14,18 @@
     </nav>
     
     <div class="form-group">
+        <div id="error">
+            <ul id="errMsg">
+
+            </ul>
+        </div>
         <h2>Login User</h2>
         <form id="form-group">
             <div class="form">
-                <input type="email" placeholder="Email" required>
+                <input type="email" name="email" placeholder="Email" required>
             </div>
             <div class="form">
-                <input type="password" placeholder="Input Password" required>
+                <input type="password" name="password" placeholder="Input Password" required>
             </div>
             <button id="submit-form">Login</button>
         </form>
