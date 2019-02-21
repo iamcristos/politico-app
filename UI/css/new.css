@@ -225,7 +225,7 @@ td{
     display: block
 }
 
-.grid-party{
+#grid-party{
     display: grid;
     margin-left: 20%;
     margin-top: 10%;
@@ -235,7 +235,7 @@ td{
     grid-auto-rows: 200px;     
 }
 
-.item-grid{
+#grid-party div{
     border: 1px solid rgba(0,0,0,.5);
     margin: 10px;
     padding: 10px;
@@ -259,7 +259,7 @@ td{
       top: 0%;
     }
     #dasboard a {float: left;}
-    div.content, {margin-left: 0;}
+    div.content {margin-left: 0;}
 
     #view-party{
         margin-left: 1%;

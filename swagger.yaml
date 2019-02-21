@@ -2,7 +2,7 @@ swagger: "2.0"
 info: 
   version: 1.00
   title: Politico
-  description: A simple web app that allows users to vote a candidate of their choice 
+  description: 'A web app that allows users to vote a candidate of their choice' 
 
 schemes: 
   https
@@ -10,11 +10,10 @@ host: politicoapplication.herokuapp.com
 basepath: api/v1
 
 paths: 
-  /pet:
     post: /auth/signup
-      summary: Register new user
-      description: ''
-      consumes:
+    summary: Register new user
+    description: ''
+    consumes:
         - application/json
       parameters:
         - in: body
