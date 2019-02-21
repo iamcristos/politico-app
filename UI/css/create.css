@@ -88,6 +88,12 @@ h2{
     letter-spacing: 1px;
     color: black;
 }
+#err{
+    background-color: red;
+}
+#success {
+    background-color: green;
+}
 
 .form-group{
     border:1px solid black;
