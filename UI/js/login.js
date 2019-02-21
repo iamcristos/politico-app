@@ -28,11 +28,21 @@ form.addEventListener('submit', (e)=>{
                 ul.append(li);
             } else {
                 const auth = data.data[0].token
-                localStorage.setItem('token', auth);
-                const confirm = localStorage.getItem('token');
-                alert(`Login Succesfull 
+                const admin = data.data[0].user.isadmin
+                if (admin === true) {
+                    sessionStorage.setItem('token', auth);
+                const adminToken = sessionStorage.getItem('token');
+                    alert(`Login Succesfull 
                 Welcome ${data.data[0].user.firstname}`)
-                location.href='newUser.html'
+                location.href='admin.html'
+                } else{
+                    sessionStorage.setItem('token', auth);
+                    const confirm = sessionStorage.getItem('token');
+                    alert(`Login Succesfull 
+                    Welcome ${data.data[0].user.firstname}`)
+                    location.href='newUser.html'
+                }
+                
             }
         })
     

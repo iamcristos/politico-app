@@ -9,7 +9,7 @@ import voteRouter from './routes/voteRouter';
 import resultRouter from './routes/resultRouter';
 import swaggerUi from 'swagger-ui-express';
 import swaggerDocument from '../swagger.yaml';
-import chores from 'cores';
+import chores from 'cors';
 
 const app = express();
 
