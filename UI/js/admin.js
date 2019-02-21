@@ -10,7 +10,7 @@ const fetchMethod = {
     }
 } 
 
-if (!confirm) {
+if (!adminToken) {
     alert('unathourized')
     location.href = 'userLogin.html'
 }

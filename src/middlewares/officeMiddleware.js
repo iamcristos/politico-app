@@ -2,8 +2,8 @@ import db from '../models/db'
 
 class officeValidator {
     static createOffice(req,res,next){
-        req.checkBody('name', 'name is required').notEmpty().trim().isNumeric().withMessage('must be a number');
-        req.checkBody('type', 'type is required').notEmpty().trim().isNumeric().withMessage('must be a number');
+        req.checkBody('name', 'name is required').notEmpty().trim();
+        req.checkBody('type', 'type is required').notEmpty().trim();
        
         const errMsg=[];
         let errors= req.validationErrors();
