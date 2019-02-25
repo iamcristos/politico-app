@@ -76,6 +76,21 @@ class userController{
         })
     }
 
+    static getAllUsers (req,res) {
+        const text = `SELECT * FROM Users`
+        db.query(text).then((user)=>{
+            res.status(200).send({
+                status:200,
+                user: user.rows
+            })
+        }).catch((err)=>{
+            res.status(400).send({
+                status:400,
+                err
+            })
+        })
+    }
+
 }
 
 export default userController;
