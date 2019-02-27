@@ -111,7 +111,7 @@ h3{
     
 }
 
-.grid-party div{
+.div{
     border: 1px solid rgba(0,0,0,.5);
     margin: 10px;
     padding: 10px;
@@ -125,7 +125,7 @@ h3{
     font-size: 10px
 }
 
-form{
+.edit{
     display: none;
 }
 .form{
@@ -142,6 +142,42 @@ input{
 
 button{
     
+}
+
+.candidate{
+    border: 1px solid black;
+    margin: auto;
+    margin-top: 10%;
+    margin-left: 25%;
+    width: 55%;
+}
+.candidate h1{
+    text-align: center;
+    margin: 10px
+}
+
+select{
+    background: transparent;
+    line-height: 1;
+    border: 1px solid rgba(0, 0, 0, 0.5) ;
+    padding: 10px;
+    border-radius: 0;
+    width: 70%;
+    height: 40px;
+    position: relative;
+    z-index: 10;
+    font-size: 1em;
+    margin: 10px;
+    /* margin-left: 25% */
+}
+#err{
+    background-color: red;
+    margin-top: 5%;
+    margin-left: 15%;
+    margin-bottom: 0%;
+}
+#success {
+    background-color: green;
 }
 
 @media screen and (max-width: 700px) {

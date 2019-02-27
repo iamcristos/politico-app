@@ -23,7 +23,7 @@ fetch(url,fetchMethod)
         const parties = data.party;
         if (data.status === 200) {
             parties.forEach((party)=>{
-                div.innerHTML += `<div><h3>NAME: ${party.name}</h3> <br>
+                div.innerHTML += `<div class="div"><h3>NAME: ${party.name}</h3> <br>
                 <h3>ADRESS: ${party.hqaddress}</h3> <br>
                 <h3>Logourl: ${party.logourl}</h3> <br>
                 <a class="grid" id=${party.id} href="#">EDIT</a>
