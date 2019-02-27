@@ -16,9 +16,9 @@ class candidate{
             })
         }).catch((err)=>{
             console.log(err)
-            return res.status(400).send({
-                status:400,
-                success: true,
+            return res.status(422).send({
+                status:422,
+                success: false,
                 message:'Candidate Already registered'
             })
         });

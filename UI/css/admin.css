@@ -170,7 +170,15 @@ select{
     margin: 10px;
     /* margin-left: 25% */
 }
-
+#err{
+    background-color: red;
+    margin-top: 5%;
+    margin-left: 15%;
+    margin-bottom: 0%;
+}
+#success {
+    background-color: green;
+}
 
 @media screen and (max-width: 700px) {
     nav{
