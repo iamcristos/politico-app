@@ -91,6 +91,30 @@ class userController{
         })
     }
 
+    static getAUser (req,res) {
+        const id = req.params.id
+        const Id = parseInt(id)
+        const values = [Id]
+        const text = `SELECT * FROM Users where id= $1`
+        db.query(text,values).then((user)=>{
+            if(user.rowCount===0){
+                res.status(404).send({
+                    status:404,
+                    message:'no user found'
+                })
+            }
+            res.status(200).send({
+                status:200,
+                user:user.rows
+            })
+        }).catch((err)=>{
+            res.status(404).send({
+                status:404,
+                message: 'no such user'
+            })
+        })
+    }
+
 }
 
 export default userController;
