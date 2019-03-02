@@ -23,6 +23,25 @@ class candidate{
             })
         });
     }
+
+    static getCandidate(req,res){
+        const id = req.params.id
+        const Id = parseInt(id)
+        const text = `SELECT * FROM Candidate`
+        const values = [Id]
+
+        db.query(text).then((candidate)=>{
+            return res.status(200).send({
+                status:200,
+                data: candidate.rows
+            })
+        }).catch((err)=>{
+            return res.status(400).send({
+                status:400,
+                message:'no candidate found'
+            })
+        })
+    }
 }
 
 export default candidate
