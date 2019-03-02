@@ -135,11 +135,17 @@ h4{
 
 .vote{
     display: flex;
-    /*flex-direction: column;*/
+    flex-direction: column;
     margin:10px;
     padding: 5px;
     margin-top: 5%;
     margin-left: 20%;
+}
+
+.vote a{
+    color: black;
+    display: inline;
+    border: 1px solid gray;
 }
 
 form{
