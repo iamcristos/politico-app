@@ -36,7 +36,12 @@ form.addEventListener('submit', (e)=>{
                 Welcome ${data.data[0].user.firstname}`)
                 location.href='admin.html'
                 } else{
+                    console.log(data.data[0].user)
+                    const id = data.data[0].user.id
+                    const user = data.data[0].user
                     sessionStorage.setItem('token', auth);
+                    sessionStorage.setItem('id', id );
+                    sessionStorage.setItem('user', user)
                     const confirm = sessionStorage.getItem('token');
                     alert(`Login Succesfull 
                     Welcome ${data.data[0].user.firstname}`)
