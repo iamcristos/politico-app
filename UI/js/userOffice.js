@@ -35,6 +35,7 @@ document.addEventListener('click', (e)=>{
         console.log('u clicked a tag')
         const form = document.getElementById('form') 
         form.innerHTML = ''
+        form.innerHTML = `<button type='submit'>Vote</button><br>`
         const officeId = e.target.id
         // console.log(officeId);
         const url = 'https://politicoapplication.herokuapp.com/api/v1/office/register';
