@@ -21,7 +21,7 @@ fetch(url,fetchMethod)
                 const div = document.getElementById('officeDiv');
                 const officeName = [];
                 officeName.push(office.name)
-                div.innerHTML += `<div class='vote'><a class='officeId' id=${office.id} href='#'>${office.name}</a><form id='form'><button type='submit'>Vote</button><br></form></div>`
+                div.innerHTML += `<div class='vote'><a class='officeId' id=${office.id} href='#'>${office.name}</a><br></div>`
             })
         } else{
             const div = document.getElementById('officeDiv');
@@ -69,11 +69,17 @@ document.addEventListener('click', (e)=>{
                             User[0].map((item)=>{
                                 if ( candidate.candidate == item.id) {
                                     console.log(item.firstname + item.lastname)
-                                    console.log(candidate)
+                                    console.log(candidate);
+                                    const voteValue = [candidate.office, candidate.id]
+                                    const id = sessionStorage.getItem('id')
                                    const div = document.getElementById('officeDiv')
                                    const form = document.getElementById('form') 
-                                   form.innerHTML += `<input type="radio" name="${candidate.office}" id="" value=${candidate.id}> ${item.firstname} ${item.lastname} <br>` 
-                                //    
+                                   form.innerHTML += `<input type="radio" name='office' id=${id} value=${voteValue}> ${item.firstname} ${item.lastname} <br>` 
+                                //    form.addEventListener('submit', (e)=>{
+                                //     e.preventDefault();
+                                //     const vote = form.elements[candidate.office].value
+                                //     console.log(vote)
+                                // })
                                 }
                                })
                         } 
@@ -84,3 +90,10 @@ document.addEventListener('click', (e)=>{
             })
     }
 })
+
+const form = document.getElementById('form');
+// form.addEventListener('submit', (e)=>{
+//     e.preventDefault();
+//     const vote = form.elements[1].value
+//     console.log(vote)
+// })
