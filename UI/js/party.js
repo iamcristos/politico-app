@@ -1,7 +1,7 @@
 const adminToken = sessionStorage.getItem('token');
 if (!adminToken) {
-    alert('unathourized')
     location.href = 'userLogin.html'
+    // alert('unathourized')
 }
 
 const form = document.getElementById('form-group');

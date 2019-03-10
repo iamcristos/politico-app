@@ -17,6 +17,26 @@ const port = process.env.PORT || 3000
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(expressValidator({
+//     // credit to a post on stackoverflow for writing a customVaditor middleware to validate file upload
+//     customValidators: {
+//         isImage : (value, filename)=>{
+            
+//             const extension = (path.extname(filename)).toLowerCase();
+//             switch (extension) {
+//                 case '.jpeg':
+//                     return '.jpeg';
+//                 case ".jpg":
+//                     return '.jpg';
+//                 case '.png':
+//                     return '.png';
+//                 default: 
+//                     return false
+//             }
+//         }
+//     }
+// }))
+
 app.use(expressValidator())
 app.use(chores());
 

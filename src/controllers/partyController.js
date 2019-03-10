@@ -2,7 +2,8 @@ import db from '../models/db'
 
 class PartyController {
   static createParty(req, res) {
-    const {name, hqAddress,logourl} = req.body
+    const {name, hqAddress} = req.body;
+    const logourl = req.file
     const text = 'INSERT INTO Party(name,hqAddress,logourl) VALUES($1 ,$2 ,$3) RETURNING *';
     const values = [name,hqAddress,logourl];
 

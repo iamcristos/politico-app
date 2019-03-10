@@ -11,8 +11,8 @@ const fetchMethod = {
 } 
 
 if (!adminToken) {
-    alert('unathourized')
     location.href = 'userLogin.html'
+    alert('unathourized')
 }
 
 
