@@ -26,17 +26,16 @@ form.addEventListener('submit', (e) => {
     const data ={firstname,lastname,othername,email,passportUrl,phoneNumber,password,password2}
     const url = 'https://politicoapplication.herokuapp.com/api/v1/auth/signup';
     // this proxyurl was gotten from stack overflow 
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    // const proxyurl = "https://cors-anywhere.herokuapp.com/";
     const fetchMethod = {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
             'Accept': "application/json",
-            'Content-Type': "application/json",
-            'Access-Control-Allow-Origin': "http://127.0.0.1:5500"
+            'Content-Type': "application/json"
     }
 }
-    fetch(proxyurl + url,fetchMethod)
+    fetch(url,fetchMethod)
         .then((res)=> res.json())
         .then((data)=>{            
             if (data.status === 400) {

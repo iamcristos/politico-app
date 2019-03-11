@@ -27,15 +27,15 @@ form.addEventListener('submit', (e)=>{
                 li.innerText = data.message;
                 ul.append(li);
             } else {
-                const auth = data.data[0].token
                 const admin = data.data[0].user.isadmin
                 if (admin === true) {
-                    sessionStorage.setItem('token', auth);
-                const adminToken = sessionStorage.getItem('token');
+                    const authAdmin = data.data[0].token
+                    sessionStorage.setItem('adminToken', authAdmin);
                     alert(`Login Succesfull 
                 Welcome ${data.data[0].user.firstname}`)
                 location.href='admin.html'
                 } else{
+                    const auth = data.data[0].token
                     console.log(data.data[0].user)
                     const id = data.data[0].user.id
                     const user = data.data[0].user

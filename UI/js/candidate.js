@@ -1,6 +1,5 @@
-const adminToken = sessionStorage.getItem('token');
+const adminToken = sessionStorage.getItem('adminToken');
 if (!adminToken) {
-    alert('unathourized')
     location.href = 'userLogin.html'
 }
 

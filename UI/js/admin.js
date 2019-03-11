@@ -1,6 +1,6 @@
 // Admin page
 const div = document.getElementById('get-party');
-const adminToken = sessionStorage.getItem('token');
+const adminToken = sessionStorage.getItem('adminToken');
 
 const url =  'https://politicoapplication.herokuapp.com/api/v1/parties';
 const fetchMethod = {
@@ -12,7 +12,6 @@ const fetchMethod = {
 
 if (!adminToken) {
     location.href = 'userLogin.html'
-    alert('unathourized')
 }
 
 

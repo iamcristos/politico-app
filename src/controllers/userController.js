@@ -30,7 +30,7 @@ class userController{
             return res.status(400).send({
                 status:400,
                 success: false,
-                message: 'email already in use by a user'
+                message: ['email already in use by a user']
             })
         });
     }
