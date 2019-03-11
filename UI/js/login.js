@@ -17,7 +17,7 @@ form.addEventListener('submit', (e)=>{
                 'Content-Type': "application/json",
         }
     }
-    fetch(proxyurl+ url, fetchMethod)
+    fetch(url, fetchMethod)
         .then((res)=> res.json())
         .then((data)=> {
             console.log(data)

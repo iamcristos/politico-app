@@ -5,10 +5,12 @@ form.addEventListener('submit', (e) => {
     const lastname = form.elements['lastname'].value.trim();
     const othername = form.elements['othername'].value.trim();
     const email = form.elements['email'].value;
-    const passportUrl = form.elements['passportUrl'].value.trim();
+    const passportUrl = form.elements['passportUrl'].value;
+    console.log(passportUrl)
     const phoneNumber = form.elements['phone'].value;
-    let password= form.elements['password'].value
-    let password2= form.elements['password2'].value
+    const password= form.elements['password'].value
+    const password2= form.elements['password2'].value
+    const isadmin = true
     const errMsg = []
     try {
         if (firstname === '')  new Error('firstname required');
@@ -23,7 +25,7 @@ form.addEventListener('submit', (e) => {
         console.log(errMsg)
     }
     // fetching api
-    const data ={firstname,lastname,othername,email,passportUrl,phoneNumber,password,password2}
+    const data ={firstname,lastname,othername,email,passportUrl,phoneNumber,password,password2,isadmin}
     const url = 'https://politicoapplication.herokuapp.com/api/v1/auth/signup';
     // this proxyurl was gotten from stack overflow 
     // const proxyurl = "https://cors-anywhere.herokuapp.com/";

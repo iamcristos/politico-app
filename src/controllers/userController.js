@@ -5,7 +5,9 @@ import jwt from 'jsonwebtoken'
 class userController{
     static userSignup(req,res){
       const {firstname, lastname, othername, email, phoneNumber, password, isadmin} = req.body;
-      const passportUrl = req.file
+      const passportUrl = req.file.url
+      console.log(password)
+      console.log(passportUrl)
       let hashPassword= passwordHash.generate(password);
         const text = `INSERT INTO Users(firstname, lastname , othername, email, phoneNumber, passportUrl, password, isadmin) VALUES($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *`
         const values = [firstname,lastname,othername,email,phoneNumber,passportUrl,hashPassword, isadmin];
@@ -30,7 +32,8 @@ class userController{
             return res.status(400).send({
                 status:400,
                 success: false,
-                message: ['email already in use by a user']
+                message: ['email already in use by a user'],
+                err
             })
         });
     }
