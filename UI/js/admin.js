@@ -25,6 +25,7 @@ fetch(url,fetchMethod)
                 div.innerHTML += `<div class="div"><h3>NAME: ${party.name}</h3> <br>
                 <h3>ADRESS: ${party.hqaddress}</h3> <br>
                 <h3>Logourl: ${party.logourl}</h3> <br>
+                <img src = ${party.logourl.url}> <br>
                 <a class="grid" id=${party.id} href="#">EDIT</a>
                 <button class="deleteGridBtn" id=${party.id} href="#">DELETE</button>
                 </div> ` 
