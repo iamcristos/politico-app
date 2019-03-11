@@ -4,7 +4,8 @@ import jwt from 'jsonwebtoken'
 
 class userController{
     static userSignup(req,res){
-      const {firstname, lastname, othername, email, phoneNumber, passportUrl, password, isadmin} = req.body;
+      const {firstname, lastname, othername, email, phoneNumber, password, isadmin} = req.body;
+      const passportUrl = req.file
       let hashPassword= passwordHash.generate(password);
         const text = `INSERT INTO Users(firstname, lastname , othername, email, phoneNumber, passportUrl, password, isadmin) VALUES($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *`
         const values = [firstname,lastname,othername,email,phoneNumber,passportUrl,hashPassword, isadmin];

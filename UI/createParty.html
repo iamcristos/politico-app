@@ -31,7 +31,7 @@
             <h2>Create Party</h2>
             <div id="err"></div>
             <div id="success"></div>
-            <form id="form-group">
+            <form id="form-group" enctype="multipart/form-data">
                 <div class="form">
                     <input type="text" name="name" placeholder="Party Name"  id="input" required> 
                 </div>
@@ -39,7 +39,7 @@
                     <input type="text" name="hqAddress" placeholder="Party Address" id="input" required>
                 </div>
                 <div class="form">
-                    <input type="text" name="logourl" placeholder="Logo Url" id="input" required>
+                    <input type="file" name="logourl" placeholder="Logo Url" id="input" required>
                 </div>
                 <div class="form">
                     <textarea name="qualification" id="" cols="30" rows="10" placeholder="Paty Description"></textarea>

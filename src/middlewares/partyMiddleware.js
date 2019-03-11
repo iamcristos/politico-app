@@ -1,12 +1,15 @@
 import db from '../models/db'
 class partyValidator {
     static createParty(req,res,next){
+        // let logourl = req.file
+        // console.log(logourl)
         req.checkBody('name', 'name is required').notEmpty().trim();
         req.checkBody('hqAddress', 'hqAddress is required').notEmpty().trim();
-        req.checkBody('logourl', 'logourl is required').notEmpty().trim();
-       
+        // req.checkBody('logourl', 'kindly upload an image for logo').notEmpty().trim();
+        // logourl = typeof req.files['logourl'] !== "undefined" ? req.files['logourl'][0].filename : ''
+    //    req.checkBody('logourl', 'kindly upload an image for logo' ).isImage(logourl)
 
-        const errMsg=[];
+       const errMsg=[];
         let errors= req.validationErrors();
         for(let i=0;i<errors.length;i++){
             errMsg.push(errors[i].msg)
