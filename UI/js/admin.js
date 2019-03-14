@@ -28,7 +28,6 @@ if (!adminToken) {
 fetch(url,fetchMethod)
     .then((res)=> res.json())
     .then((data)=>{
-        console.log(data)
         const parties = data.party;
         if (data.status === 200) {
             parties.forEach((party)=>{
@@ -44,9 +43,6 @@ fetch(url,fetchMethod)
         }
     }).catch((err)=> console.log(err))
 
-
-// const btn = document.querySelectorAll(".deleteGridBtn")
-// delete a party
 const btn = document.getElementsByTagName("button")
  console.log(btn)
  document.addEventListener('click', (event)=> {
