@@ -12,9 +12,9 @@ dotenv.config()
 //     api_secret : process.env.api_secret
 // });
 cloudinary.config({
-    cloud_name : cristos,
+    cloud_name : 'cristos',
     api_key : 625553475922246,
-    api_secret : AW8LuKqWy3qAMKUSM2OCOZH5_Qw
+    api_secret : 'AW8LuKqWy3qAMKUSM2OCOZH5_Qw'
 });
 
 const storage = cloudinaryStorage({
