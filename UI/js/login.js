@@ -26,6 +26,11 @@ form.addEventListener('submit', (e)=>{
                 const ul = document.getElementById('errMsg');
                 li.innerText = data.message;
                 ul.append(li);
+            } else if(data.status === 400){
+                const li = document.createElement('li');
+                const ul = document.getElementById('errMsg');
+                li.innerText = data.message;
+                ul.append(li);
             } else {
                 const admin = data.data[0].user.isadmin
                 if (admin === true) {

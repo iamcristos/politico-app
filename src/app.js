@@ -16,6 +16,7 @@ const app = express();
 const port = process.env.PORT || 3000
 
 app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded());
 app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(expressValidator({
 //     // credit to a post on stackoverflow for writing a customVaditor middleware to validate file upload
@@ -37,7 +38,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //     }
 // }))
 
-app.use(expressValidator())
+app.use([expressValidator()])
 app.use(chores());
 
 app.use(router);
