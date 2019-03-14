@@ -9,7 +9,7 @@ const router = express.Router();
 const versionedEndPoint = '/api/v1/parties';
 const parser = multerStorage.single('logourl')
 
-router.post(versionedEndPoint, authenticate.verifyToken,parser,partyValidator.createParty , partyController.createParty);
+router.post(versionedEndPoint, authenticate.verifyToken,parser, partyController.createParty);
 router.get(versionedEndPoint, authenticate.verifyUser ,partyController.getAllParties);
 router.get(`${versionedEndPoint}/:id`, authenticate.verifyUser ,partyController.getASpecificParty);
 router.patch(`${versionedEndPoint}/:id`, authenticate.verifyToken,partyValidator.editAParty, partyController.editAParty);
