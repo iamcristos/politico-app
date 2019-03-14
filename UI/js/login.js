@@ -32,10 +32,16 @@ form.addEventListener('submit', (e)=>{
                 li.innerText = data.message;
                 ul.append(li);
             } else {
-                const admin = data.data[0].user.isadmin
+                const admin = data.data[0].user.isadmin;
+                const user = data.data[0].user
+                    console.log(user)
+                sessionStorage.setItem('email', user.email);
+                sessionStorage.setItem('firstname', user.firstname);
+                sessionStorage.setItem('lastname', user.lastname)
                 if (admin === true) {
                     const authAdmin = data.data[0].token
                     sessionStorage.setItem('adminToken', authAdmin);
+                    sessionStorage.setItem('adminImage', data.data[0].user.passportUrl);
                     alert(`Login Succesfull 
                 Welcome ${data.data[0].user.firstname}`)
                 location.href='admin.html'
@@ -43,10 +49,9 @@ form.addEventListener('submit', (e)=>{
                     const auth = data.data[0].token
                     console.log(data.data[0].user)
                     const id = data.data[0].user.id
-                    const user = data.data[0].user
                     sessionStorage.setItem('token', auth);
                     sessionStorage.setItem('id', id );
-                    sessionStorage.setItem('user', user)
+                    sessionStorage.setItem('image', data.data[0].user.passportUrl)
                     const confirm = sessionStorage.getItem('token');
                     alert(`Login Succesfull 
                     Welcome ${data.data[0].user.firstname}`)
