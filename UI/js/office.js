@@ -1,4 +1,14 @@
-const adminToken = sessionStorage.getItem('adminToken');;
+const adminToken = sessionStorage.getItem('adminToken');
+const adminImage = sessionStorage.getItem('adminImage');
+const firstname = sessionStorage.getItem('firstname');
+const lastname = sessionStorage.getItem('lastname');
+const mail = sessionStorage.getItem('email');
+const image = document.getElementById('pic')
+image.src= `${adminImage}`;
+const names = document.getElementById('fullname');
+names.innerText = `${firstname} ${lastname}`;
+const email = document.getElementById('email');
+email.innerText = `${mail}`;
 if (!adminToken) {
     location.href = 'userLogin.html'
 }
