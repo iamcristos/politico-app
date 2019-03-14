@@ -50,12 +50,10 @@ const getFetch = {
 }
 fetch(partyUrl,getFetch)
     .then((res)=>res.json())
-    .then((parties)=>{
-        console.log(parties)
+    .then((parties)=> {
         if (parties.status === 200){
             const party = parties.party;
             party.forEach((party)=>{
-                console.log(party)
                 const partySelect = form.elements['party'];
                 const id = party.id;
                 partySelect.innerHTML += `<option value=${id}>${party.name}</option>`
@@ -68,11 +66,9 @@ const officeUrl = `https://politicoapplication.herokuapp.com/api/v1/offices`
 fetch(officeUrl,getFetch)
     .then((res)=>res.json())
     .then((office)=>{
-        // console.log(office)
         if(office.status === 200){
             const offices = office.office;
             offices.forEach((office)=>{
-                // console.log(office)
                 const id = office.id;
                 const officeSelect = form.elements['office'];
                 officeSelect.innerHTML += `<option value=${id}>${office.type}: ${office.name}</option>`
@@ -85,7 +81,6 @@ console.log(form)
 form.addEventListener('submit', (e)=>{
     e.preventDefault();
     const candidate = form.elements['user'].value
-    console.log(candidate)
     const party = form.elements['party'].value
     const office = form.elements['office'].value
     const id = office
