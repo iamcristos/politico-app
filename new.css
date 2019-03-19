@@ -20,7 +20,7 @@ nav{
     display: flex;
     width: 100%;
     height: 50px;
-    background-color: black;
+    background-color: blue;
     padding: 0 20px;
     z-index: 1;
 }
@@ -43,16 +43,16 @@ li a{
 }
 
 #dasboard{
-  height: 100%; 
-  width: 160px; 
-  position: fixed; 
-  z-index: 1; 
-  top: 50px; 
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 160px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 50px; /* Stay at the top */
   left: 0;
-  background-color: rgba(0, 0, 0, 0.3); 
-  /* background-color: black; */
+  background-color: #93c2df; 
+  /* background-color: blue; */
   /* border-top:1px solid white; */
-  overflow-x: hidden; 
+  overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px;
 }
 
@@ -61,7 +61,7 @@ li a{
 }
 #dasboard a{
     /* border-bottom: 1px solid white; */
-    color: black;
+    color: blue;
 }
 
 #pic{
@@ -88,7 +88,7 @@ a{
 #view-party{
     margin: auto;
     margin-top: 10%;
-    margin-left: 20%; 
+    margin-left: 15%; 
     /* Same as the width of the sidebar */
     padding: 0px 10px
 }
@@ -134,34 +134,28 @@ h4{
 }
 
 .vote{
+    /* position: relative;
+    top:10%;
+    left:20%; */
     display: flex;
-
     flex-direction: column;
     margin:10px;
     padding: 5px;
     margin-top: 5%;
     margin-left: 20%;
 }
-.vote a{
-    color: black;
-    display: inline;
-    border: 1px solid gray;
-}
 
-.formvote{
-    display: inline;
+form{
     margin: 20px;
     padding: 10px;
-    /* width: 300px; */
-    background: rgba(0, 0, 0, 0.3);
+    width: 300px;
+    /* border: 1px solid blue; */
+    background: #93c2df;
     border-radius: 10px;
-}
-form{
-    display: none;
 }
 
 form:hover{
-    /*font-weight: bolder;*/
+    font-weight: bolder;
 }
 
 .h2{
@@ -188,8 +182,8 @@ button{
 }
 
 button:hover{
-    /*border: 3px;*/
-    /*font-size: 15px;*/
+    border: 3px;
+    font-size: 15px;
     font-weight: bolder;
 }
 
@@ -231,36 +225,7 @@ td{
     color: red
 }
 
-.profile input {
-    display: block
-}
-
-
-#grid-party{
-    display: grid;
-    margin-left: 20%;
-    margin-top: 10%;
-    grid-row-gap: 30px;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-columns: 100px;
-    grid-auto-rows: 200px;     
-}
-
-
-#grid-party div{
-    border: 1px solid rgba(0,0,0,.5);
-    margin: 10px;
-    padding: 10px;
-    padding-top: 30px;
-    text-align: center;
-}
-
-.grid{
-    color:rgb(227, 227, 250);
-    display: inline;
-    font-size: 10px
-}
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 700px) {
     nav{
         position: relative;
     }
@@ -271,28 +236,25 @@ td{
       top: 0%;
     }
     #dasboard a {float: left;}
-    div.content {margin-left: 0;}
+    div.content, {margin-left: 0;}
 
     #view-party{
-        margin-left: 1%;
+        margin-left: 1%
     }
 
     .vote{
-        margin-left: 3%;
-        flex-direction: column;
+        margin-left: 3%
     }
 
     form {
         margin-left: 3%;
     }
-
   }
   
   /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
   @media screen and (max-width: 400px) {
     #dasboard a {
-        text-align: center;
-        float: none;
+      text-align: center;
+      float: none;
     }
-
   }

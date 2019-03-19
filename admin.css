@@ -20,8 +20,7 @@ nav{
     display: flex;
     width: 100%;
     height: 50px;
-
-    background-color: black;
+    background-color: blue;
     padding: 0 20px;
     z-index: 1;
 }
@@ -44,14 +43,16 @@ li a{
 }
 
 #dasboard{
-  height: 100%;
-  width: 160px;  
-   position: fixed;
-  z-index: 1;
-   top: 50px;   
-   left: 0;
-  background-color:  rgba(0, 0, 0, 0.3); 
-  overflow-x: hidden; 
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 160px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 50px; /* Stay at the top */
+  left: 0;
+  background-color: #93c2df; 
+  /* background-color: blue; */
+  /* border-top:1px solid white; */
+  overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px;
 }
 
@@ -60,8 +61,9 @@ li a{
 }
 #dasboard a{
     /* border-bottom: 1px solid white; */
-    color: black;
+    color: blue;
 }
+
 #pic{
     border-radius: 50%;
     margin-left: 10px;
@@ -83,61 +85,33 @@ a{
     color: white;
 }
 
-h2{
-    margin: auto;
-    margin-top: 5px;
-    letter-spacing: 1px;
-    color: black;
-}
-
-#err{
-    background-color: red;
-}
-#success {
-    background-color: green;
-}
-
-.form-group{
-    border:1px solid black;
-    padding: 20px;
+#view-party{
     margin: auto;
     margin-top: 10%;
-    margin-left: 30%;
-    width: 400px;
-    border-radius: 5px;
-    text-align: center;
+    margin-left: 15%; 
+    /* Same as the width of the sidebar */
+    /* padding: 0px 50px */
+    padding-left: 20px
 }
 
+.political-party{
+    border: 1px solid red;
+    display: flex;
+}
 
-
-input, textarea{
-    width: 70%;
-    height: 40px;
+.parties{
     margin: 10px;
-    padding-left: 5px;
-    border-radius: 5px;
-    border: 1px solid black
-    /* background-color: red */
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
 }
 
-textarea{
-    height: 100px;
+img{
+    padding-left: 5%;
+    object-fit: cover;
 }
 
-button{
-    width:70%;
-    height: 30px;
-    margin:10px;
-    cursor: pointer;
-    letter-spacing: 2px;
-    background-color: black;
-    border: none;
-    color: white
-}
 
-button:hover{
-    font-weight: bolder
-}
 
 
 @media screen and (max-width: 700px) {
@@ -151,25 +125,15 @@ button:hover{
       top: 0%;
     }
     #dasboard a {float: left;}
-    div.form-group {margin-left: 0;}
-
+    #view-party {margin-left: 0;}
 
     #view-party{
-        margin-left: 1%
-    }
-
-    .vote{
         margin-left: 3%
     }
 
-    .form-group {
-        margin-left: 3%;
-        width: 70%;
-        margin-top: 20%;
-    }
-  }
+}
   
-  
+  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
   @media screen and (max-width: 400px) {
     #dasboard a {
       text-align: center;

@@ -32,11 +32,11 @@ nav li {
     border-radius: 5px;
 }
 
+
 .error {
     background-color: red;
     list-style: none;
 }
-
 .right {
     float: right;
 }

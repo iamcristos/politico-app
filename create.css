@@ -20,8 +20,7 @@ nav{
     display: flex;
     width: 100%;
     height: 50px;
-
-    background-color: black;
+    background-color: blue;
     padding: 0 20px;
     z-index: 1;
 }
@@ -44,14 +43,16 @@ li a{
 }
 
 #dasboard{
-  height: 100%;
-  width: 160px;  
-   position: fixed;
-  z-index: 1;
-   top: 50px;   
-   left: 0;
-  background-color:  rgba(0, 0, 0, 0.3); 
-  overflow-x: hidden; 
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 160px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 50px; /* Stay at the top */
+  left: 0;
+  background-color: #93c2df; 
+  /* background-color: blue; */
+  /* border-top:1px solid white; */
+  overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px;
 }
 
@@ -60,7 +61,7 @@ li a{
 }
 #dasboard a{
     /* border-bottom: 1px solid white; */
-    color: black;
+    color: blue;
 }
 #pic{
     border-radius: 50%;
@@ -90,15 +91,8 @@ h2{
     color: black;
 }
 
-#err{
-    background-color: red;
-}
-#success {
-    background-color: green;
-}
-
 .form-group{
-    border:1px solid black;
+    border:1px solid blue;
     padding: 20px;
     margin: auto;
     margin-top: 10%;
@@ -116,7 +110,7 @@ input, textarea{
     margin: 10px;
     padding-left: 5px;
     border-radius: 5px;
-    border: 1px solid black
+    border: 1px solid blue
     /* background-color: red */
 }
 
@@ -130,7 +124,7 @@ button{
     margin:10px;
     cursor: pointer;
     letter-spacing: 2px;
-    background-color: black;
+    background-color: blue;
     border: none;
     color: white
 }
@@ -151,8 +145,7 @@ button:hover{
       top: 0%;
     }
     #dasboard a {float: left;}
-    div.form-group {margin-left: 0;}
-
+    div.form-group, {margin-left: 0;}
 
     #view-party{
         margin-left: 1%
@@ -169,7 +162,7 @@ button:hover{
     }
   }
   
-  
+  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
   @media screen and (max-width: 400px) {
     #dasboard a {
       text-align: center;
