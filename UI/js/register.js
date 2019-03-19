@@ -1,4 +1,3 @@
-
 const createUser = (e) => {
     const ul = document.getElementById('msgErr');
     ul.innerHTML = ""
@@ -67,3 +66,4 @@ const createUser = (e) => {
     }
 
 document.getElementById('form-group').addEventListener('submit', createUser);
+

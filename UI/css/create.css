@@ -20,6 +20,7 @@ nav{
     display: flex;
     width: 100%;
     height: 50px;
+
     background-color: black;
     padding: 0 20px;
     z-index: 1;
@@ -88,6 +89,7 @@ h2{
     letter-spacing: 1px;
     color: black;
 }
+
 #err{
     background-color: red;
 }
@@ -150,6 +152,7 @@ button:hover{
     }
     #dasboard a {float: left;}
     div.form-group {margin-left: 0;}
+
 
     #view-party{
         margin-left: 1%

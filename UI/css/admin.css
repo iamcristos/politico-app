@@ -68,11 +68,11 @@ li a{
 }
 
 h2{
+
     display: inline;
     max-width: 1px;
     font-weight: lighter;
     margin-bottom: 2px;
-    
 }
 
 h3{
@@ -94,6 +94,7 @@ a{
 
 .grid-party{
     display: grid;
+
     margin-left: 25%;
     margin-top: 10%;
     grid-row-gap: 30px;
@@ -113,6 +114,7 @@ h3{
     text-align: center;
     
 }
+
 
 .div{
     border: 1px solid rgba(0,0,0,.5);
@@ -190,6 +192,7 @@ select{
 .partyImg {
     max-height: 20px;
 }
+
 
 @media screen and (max-width: 700px) {
     nav{
