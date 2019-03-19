@@ -10,7 +10,6 @@ const url = 'https://politicoapplication.herokuapp.com/api/v1/parties';
  }
 
  if (!confirm) {
-     alert('unathourized')
      location.href = 'userLogin.html'
  }
 
@@ -19,10 +18,6 @@ const url = 'https://politicoapplication.herokuapp.com/api/v1/parties';
     .then((data)=> {console.log(data.party)
         const div = document.getElementById('item-grid');
         const divContainer = document.getElementById('grid-party')
-        const name = document.createElement('h3');
-        const address = document.createElement('h3');
-        const logourl = document.createElement('h3');
-        // let h2 = document.createElement('h3');
         if (data.status === 200) {
             console.log(data)
             const res = data.party;
@@ -30,7 +25,7 @@ const url = 'https://politicoapplication.herokuapp.com/api/v1/parties';
                 console.log(party)
             divContainer.innerHTML += `<div><h3>NAME: ${party.name}</h3> <br>
             <h3>ADRESS: ${party.hqaddress}</h3> <br>
-            <h3>Logourl: ${party.logourl}</h3> 
+            <img src=${party.logourl}> 
             </div> ` 
             })
         }

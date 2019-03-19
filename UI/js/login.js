@@ -1,14 +1,15 @@
 const form= document.getElementById('form-group')
 
 form.addEventListener('submit', (e)=>{
+    const ul = document.getElementById('errMsg');
+    ul.innerHTML = ""
     e.preventDefault();
     const email = form.elements['email'].value.trim()
     console.log(email)
     const password = form.elements['password'].value
     const body = {email,password}
     const url = 'https://politicoapplication.herokuapp.com/api/v1/auth/login';
-    // proxyurl was gotten from stackoverflow to fix cors access
-    const proxyurl = "https://cors-anywhere.herokuapp.com/"
+
     const fetchMethod = {
         method: "POST",
         body: JSON.stringify(body),
@@ -61,6 +62,7 @@ form.addEventListener('submit', (e)=>{
             }
         })
     
+
 });
 
 

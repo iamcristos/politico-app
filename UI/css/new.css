@@ -135,13 +135,13 @@ h4{
 
 .vote{
     display: flex;
+
     flex-direction: column;
     margin:10px;
     padding: 5px;
     margin-top: 5%;
     margin-left: 20%;
 }
-
 .vote a{
     color: black;
     display: inline;
@@ -235,6 +235,7 @@ td{
     display: block
 }
 
+
 #grid-party{
     display: grid;
     margin-left: 20%;
@@ -244,6 +245,7 @@ td{
     grid-auto-columns: 100px;
     grid-auto-rows: 200px;     
 }
+
 
 #grid-party div{
     border: 1px solid rgba(0,0,0,.5);

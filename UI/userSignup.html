@@ -22,31 +22,32 @@
         <h2>Sign Up</h2>
         <form id="form-group" enctype="multipart/form-data">
             <div class="form">
-                <input type="text" name="firstname" placeholder="firstname"  required> 
+                <input type="text" name="firstname" placeholder="firstname" id="fn" required> 
             </div>
             <div class="form">
-                <input type="text" name="lastname" placeholder="Lastname" required>
+                <input type="text" name="lastname" placeholder="Lastname" id="ln" required>
             </div>
             <div class="form">
-                <input type="text" name="othername" placeholder="othername" required>
+                <input type="text" name="othername" placeholder="othername" id="on" required>
             </div>
             <div class="form">
-                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="email" name="email" placeholder="Email Address" id="em" required>
             </div>
             <div class="form">
-                <input type="number" name="phone" placeholder="Phonenumber" required>
+                <input type="number" name="phone" placeholder="Phonenumber" id="pn" required>
             </div>
             <div class="form">
-                <input type="file" name="passportUrl"  placeholder="Passport" required>
+                <input type="file" name="passportUrl"  placeholder="Passport" id="img" required>
             </div>
             <div class="form">
-                <input type="password" name="password" placeholder="Password" required>
+                <input type="password" name="password" placeholder="Password" id="pass1" required>
             </div>
             <div class="form">
-                <input type="password" name="password2" placeholder="Confirm Password" required>
+                <input type="password" name="password2" placeholder="Confirm Password" id="pass2" required>
             </div>
             <div class="form">
-                <button id="submit-form">Register</button>
+                <button type="submit" id="submit-form">Register</button>
+<!--                 <input type="submit" id="submit-form" value="Register"> -->
             </div>
             <p id="p">Already have an account? <a href="userLogin.html">Login</a></p>
         </form>
