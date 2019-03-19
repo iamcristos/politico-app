@@ -92,6 +92,14 @@ a{
     color: black;
 }
 
+
+#msgErr li{
+    background: red;
+    color:white;
+    list-style: none;
+    margin: 5px;
+    padding: 5px;
+}
 @media only screen and (max-width: 768px) {
     .form-group{
         width: auto;

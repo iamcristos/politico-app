@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Politico</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/admin.css" />
+    
+</head>
+<body>
+    <nav>
+        <li class="left"><a href='index.html'>Politico</a></li>
+        <div class="nav-right">
+            <li class="right"><a href="userLogin.html">Logout</a></li>
+        </div>
+    </nav>
+
+    <div id="dasboard">
+        <div id="avatar">
+            <img  height="70px" width="auto" alt="" id="pic"> <br>
+            <h2 id="fullname"></h2>
+            <h3 id="email"></h3>
+        </div>        
+        <a href="createParty.html">Create Parties</a>
+        <a href="createOffice.html">Create Office</a>
+        <a href="candidate.html">Create Candidate</a>
+    </div>
+    <div class="form-group">
+            <h2>Create Office</h2>
+            <div id="err">
+
+            </div>
+            <div id="success">
+                
+            </div>
+        <div class="candidate">
+            <h1>Create Candidate</h1>
+                <form id="form-group">
+                    <div class="form-select">
+                        <select name="user">
+                            <option selected>Candidate</label>
+                        </select>
+                    </div>
+                    <div class="form-select">
+                        <select name="office">
+                            <option selected>Office</option>
+                        </select>
+                    </div>
+                    <div class="form-select">
+                        <select name="party">
+                            <option selected>Political Party</option>
+                        </select>
+                    </div>
+                    <button type="submit">Create</button>
+                </form>
+        </div> 
+    </div>  
+    <!-- <script src="js/office.js"></script> -->
+    <script src="js/candidate.js"></script>
+    </body>
+    </html>

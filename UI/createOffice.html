@@ -18,22 +18,32 @@
 
     <div id="dasboard">
         <div id="avatar">
-            <img src="images/avatar.png" height="30px" width="auto" alt="" id="pic"> <br>
-            <h2>Nmeregini Vincent</h2>
-            <h3>vincent@gmail.com</h3>
+
+            <img  height="70px" width="auto" alt="" id="pic"> <br>
+            <h2 id="fullname"></h2>
+            <h3 id="email"></h3>
         </div>        
         <a href="createParty.html">Create Parties</a>
         <a href="createOffice.html">Create Office</a>
+        <a href="candidate.html">Create Candidate</a>
+
     </div>
 
     <div class="form-group">
             <h2>Create Office</h2>
+            <div id="err">
+
+            </div>
+            <div id="success">
+                
+            </div>
             <form id="form-group">
                 <div class="form">
-                    <input type="text" name="officename" placeholder="officename"  required> 
+                    <input type="text" name="name" placeholder="officename"  required> 
                 </div>
                 <div class="form">
-                    <input type="text" name="officetype" placeholder="officetype" required>
+                    <input type="text" name="type" placeholder="officetype" required>
+
                 </div>
                 <div class="form">
                     <textarea name="qualification" id="" cols="30" rows="10" aria-placeholder="Qualification"></textarea>
@@ -43,4 +53,8 @@
                 </div>
             </form>
     </div>
+    <script src="js/office.js"></script>
+    </body>
+    </html>
+
         

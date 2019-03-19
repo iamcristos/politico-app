@@ -135,19 +135,29 @@ h4{
 
 .vote{
     display: flex;
-    /*flex-direction: column;*/
+
+    flex-direction: column;
     margin:10px;
     padding: 5px;
     margin-top: 5%;
     margin-left: 20%;
 }
+.vote a{
+    color: black;
+    display: inline;
+    border: 1px solid gray;
+}
 
-form{
+.formvote{
+    display: inline;
     margin: 20px;
     padding: 10px;
-    width: 300px;
+    /* width: 300px; */
     background: rgba(0, 0, 0, 0.3);
     border-radius: 10px;
+}
+form{
+    display: none;
 }
 
 form:hover{
@@ -225,7 +235,8 @@ td{
     display: block
 }
 
-.grid-party{
+
+#grid-party{
     display: grid;
     margin-left: 20%;
     margin-top: 10%;
@@ -235,7 +246,8 @@ td{
     grid-auto-rows: 200px;     
 }
 
-.item-grid{
+
+#grid-party div{
     border: 1px solid rgba(0,0,0,.5);
     margin: 10px;
     padding: 10px;
@@ -259,7 +271,7 @@ td{
       top: 0%;
     }
     #dasboard a {float: left;}
-    div.content, {margin-left: 0;}
+    div.content {margin-left: 0;}
 
     #view-party{
         margin-left: 1%;

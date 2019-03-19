@@ -1,0 +1,49 @@
+{
+  "name": "andelabootcamp",
+  "version": "1.0.0",
+  "description": "A web App that users can vote ",
+  "main": "app.js",
+  "scripts": {
+    "start": "babel-node src/app.js",
+    "start-dev": "nodemon src/app.js --exec babel-node --",
+    "test": "npm --reporter=html --reporter=text run test-migrate && cross-env NODE_ENV='test' nyc mocha --require @babel/register ./test/**/*.js --exit --timeout 6000",
+    "migrate": "babel-node src/migration/create.js",
+    "test-migrate": "cross-env NODE_ENV='test' babel-node src/migration/create"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/register": "^7.0.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "cloudinary": "^1.13.2",
+    "cores": "^0.8.5",
+    "cors": "^2.8.5",
+    "debug": "^4.1.1",
+    "dotenv": "^6.2.0",
+    "expect": "^24.0.0",
+    "express": "^4.16.4",
+    "express-validator": "^5.3.1",
+    "jsonwebtoken": "^8.4.0",
+    "mocha": "^5.2.0",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.1",
+    "multer-storage-cloudinary": "^2.2.1",
+    "password-hash": "^1.2.2",
+    "pg": "^7.8.0",
+    "supertest": "^3.4.2",
+    "swagger-ui-express": "^4.0.2"
+  },
+  "devDependencies": {
+    "babel-polyfill": "^6.26.0",
+    "coveralls": "^3.0.2",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "nyc": "^13.2.0"
+  }
+}

@@ -44,7 +44,7 @@ li a{
 
 #dasboard{
   height: 100%; 
-  width: 160px; 
+  width: 180px; 
   position: fixed; 
   z-index: 1; 
   top: 50px; 
@@ -68,6 +68,9 @@ li a{
 }
 
 h2{
+
+    display: inline;
+    max-width: 1px;
     font-weight: lighter;
     margin-bottom: 2px;
 }
@@ -86,12 +89,16 @@ a{
   #view-party{
     margin: auto;
     margin-top: 10%;
-    margin-left: 15%;  
+
+    margin-left: 20%;  
+=======
+ 
 }
 
 .grid-party{
     display: grid;
-    margin-left: 20%;
+
+    margin-left: 25%;
     margin-top: 10%;
     grid-row-gap: 30px;
     grid-template-columns: repeat(3, 1fr);
@@ -111,7 +118,8 @@ h3{
     
 }
 
-.item-grid{
+
+.div{
     border: 1px solid rgba(0,0,0,.5);
     margin: 10px;
     padding: 10px;
@@ -124,6 +132,70 @@ h3{
     display: inline;
     font-size: 10px
 }
+
+.edit{
+    display: none;
+}
+.form{
+    display: flex;
+    margin: auto;
+    margin-top: 10%;
+    margin-left: 25%;
+    margin-bottom: 0px
+
+}
+input{
+    margin: 10px
+}
+
+button{
+    
+}
+
+.candidate{
+    border: 1px solid black;
+    margin: auto;
+    margin-top: 10%;
+    margin-left: 25%;
+    width: 55%;
+}
+.candidate h1{
+    text-align: center;
+    margin: 10px
+}
+
+select{
+    background: transparent;
+    line-height: 1;
+    border: 1px solid rgba(0, 0, 0, 0.5) ;
+    padding: 10px;
+    border-radius: 0;
+    width: 70%;
+    height: 40px;
+    position: relative;
+    z-index: 10;
+    font-size: 1em;
+    margin: 10px;
+    /* margin-left: 25% */
+}
+#err{
+    background-color: red;
+    margin-top: 5%;
+    margin-left: 15%;
+    margin-bottom: 0%;
+}
+#success {
+    background-color: green;
+}
+
+.admin-dasb {
+    max-width: 5px;
+}
+
+.partyImg {
+    max-height: 20px;
+}
+
 
 @media screen and (max-width: 700px) {
     nav{
