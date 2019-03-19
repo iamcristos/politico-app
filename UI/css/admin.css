@@ -44,7 +44,7 @@ li a{
 
 #dasboard{
   height: 100%; 
-  width: 160px; 
+  width: 180px; 
   position: fixed; 
   z-index: 1; 
   top: 50px; 
@@ -68,8 +68,11 @@ li a{
 }
 
 h2{
+    display: inline;
+    max-width: 1px;
     font-weight: lighter;
     margin-bottom: 2px;
+    
 }
 
 h3{
@@ -86,12 +89,12 @@ a{
   #view-party{
     margin: auto;
     margin-top: 10%;
-    margin-left: 15%;  
+    margin-left: 20%;  
 }
 
 .grid-party{
     display: grid;
-    margin-left: 20%;
+    margin-left: 25%;
     margin-top: 10%;
     grid-row-gap: 30px;
     grid-template-columns: repeat(3, 1fr);
@@ -178,6 +181,14 @@ select{
 }
 #success {
     background-color: green;
+}
+
+.admin-dasb {
+    max-width: 5px;
+}
+
+.partyImg {
+    max-height: 20px;
 }
 
 @media screen and (max-width: 700px) {

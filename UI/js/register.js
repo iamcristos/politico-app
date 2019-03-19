@@ -1,42 +1,50 @@
-const form= document.getElementById('form-group');
-form.addEventListener('submit', (e) => {
+
+const createUser = (e) => {
+    const ul = document.getElementById('msgErr');
+    ul.innerHTML = ""
     e.preventDefault()
-    const firstname = form.elements['firstname'].value.trim();
-    const lastname = form.elements['lastname'].value.trim();
-    const othername = form.elements['othername'].value.trim();
-    const email = form.elements['email'].value;
-    const passportUrl = form.elements['passportUrl'].value;
-    console.log(passportUrl)
-    const phoneNumber = form.elements['phone'].value;
-    const password= form.elements['password'].value
-    const password2= form.elements['password2'].value
-    const isadmin = true
+    const image = document.querySelector("input[type='file']");
+    const firstname = document.getElementById('fn').value.trim()
+    const lastname = document.getElementById('ln').value.trim()
+    const othername = document.getElementById('on').value.trim()
+    const email = document.getElementById('em').value.trim()
+    const phoneNumber = document.getElementById('pn').value
+    const password = document.getElementById('pass1').value
+    const password2 = document.getElementById('pass2').value
+    
     const errMsg = []
     try {
-        if (firstname === '')  new Error('firstname required');
-        if (lastname === '')  new Error('lastname is required');
-
+        if (firstname === '')  throw Error('firstname required');
+        if (lastname === '')  throw Error('lastname is required');
+        if (password != password2) throw Error('password must match')
     } catch (error) {
-        console.log(errMsg)
+        
         console.log(error)
-        for (let i=0; i<error.length; i++){
-            errMsg.push(error[i])
-        }
+        const ul = document.getElementById('msgErr');
+        let li = document.createElement('li')
+        li.innerText = error
+            ul.append(li)
         console.log(errMsg)
     }
+
+    let userForm = new FormData();
+    
+
+    userForm.append('firstname', firstname)
+    userForm.append('lastname', lastname)
+    userForm.append('othername', othername)
+    userForm.append('email', email)
+    userForm.append('phoneNumber', phoneNumber)
+    userForm.append('passportUrl', image.files[0])
+    userForm.append('password', password)
     // fetching api
-    const data ={firstname,lastname,othername,email,passportUrl,phoneNumber,password,password2,isadmin}
+    
     const url = 'https://politicoapplication.herokuapp.com/api/v1/auth/signup';
-    // this proxyurl was gotten from stack overflow 
-    // const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    
     const fetchMethod = {
         method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-            'Accept': "application/json",
-            'Content-Type': "application/json"
+        body: userForm
     }
-}
     fetch(url,fetchMethod)
         .then((res)=> res.json())
         .then((data)=>{            
@@ -56,4 +64,6 @@ form.addEventListener('submit', (e) => {
             }
         })
         .catch((err)=> console.log(err))
-});
+    }
+
+document.getElementById('form-group').addEventListener('submit', createUser);

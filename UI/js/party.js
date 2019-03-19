@@ -17,7 +17,7 @@ if (!adminToken) {
 
 const form = document.getElementById('form-group');
 const input = document.getElementById("submit-form");
-// const input = form.elements['input']
+
 input.addEventListener('click', ()=>{
     const divErr = document.getElementById('err');
     const divSucc =  document.getElementById('success');
@@ -28,20 +28,21 @@ input.addEventListener('click', ()=>{
 const createParty = (e)=>{
     e.preventDefault()
     const name = form.elements['name'].value.trim();
-    console.log(name)
     const hqAddress = form.elements['hqAddress'].value.trim();
-    const logourl = form.elements['logourl'].value.trim();
+    const logourl = form.elements['logourl'].files[0];
+
+    let newParty = new FormData()
+    newParty.append('name', name);
+    newParty.append('hqAddress', hqAddress);
+    newParty.append('logourl', logourl)
     const url =  'https://politicoapplication.herokuapp.com/api/v1/parties'
-    const body = {name,hqAddress,logourl}
-    console.log(body)
+    
     const fetchMethod = {
         method: 'POST',
         headers: {
-            'x-access-token': adminToken,
-            'Accept': "application/json",
-            'Content-Type': "application/json"
+            'x-access-token': adminToken
         },
-        body: JSON.stringify(body)
+        body: newParty
     } 
 
     fetch(url,fetchMethod)
@@ -71,6 +72,10 @@ const createParty = (e)=>{
                     ${msg}</li>
                     </ul>`
             }
+
+        })
+        .catch((err)=>{
+            console.log(err)
         })
 }
 
