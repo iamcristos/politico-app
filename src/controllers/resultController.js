@@ -11,7 +11,7 @@ class resultController{
         db.query(text,values).then((result)=>{
             if (result.rowCount === 0) {
                 return res.status(200).send({
-                    status:200,
+                    status:204,
                     success: true,
                     message: 'no votes'
                 })
