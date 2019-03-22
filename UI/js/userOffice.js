@@ -8,7 +8,6 @@ const fetchMethod = {
 }
 
 if (!confirm) {
-    alert('unathourized')
     location.href = 'userLogin.html'
 }
 
