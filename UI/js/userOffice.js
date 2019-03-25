@@ -73,12 +73,12 @@ document.addEventListener('click', (e)=>{
                                 if ( candidate.candidate == item.id) {
                                     console.log(item.firstname + item.lastname)
                                     console.log(candidate);
-                                    const voteValue = [candidate.office, candidate.id]
+                                    const voteValue = [candidate.office, candidate.id,]
                                     console.log(voteValue)
                                     const id = sessionStorage.getItem('id')
                                    const div = document.getElementById('officeDiv')
                                    const form = document.getElementById('form') 
-                                   form.innerHTML += `<input type="radio" name='office' id=${id} value=${voteValue}> ${item.firstname} ${item.lastname} <br>` 
+                                   form.innerHTML += `<input type="radio" name='office' id=${id} value=${voteValue} class='${item.firstname} ${item.lastname}'> ${item.firstname} ${item.lastname} <br>` 
                                 }
                                })
                         } 
@@ -90,16 +90,19 @@ document.addEventListener('click', (e)=>{
         form.addEventListener('submit',(e)=>{
             e.preventDefault()
             const voteInput = document.querySelector('input[name=office]:checked')
-            const voterInput = voteInput.value
+            const voterInput = voteInput.value;
             console.log(voteInput);
-            const voteUrl = 'https://politicoapplication.herokuapp.com/api/v1/votes';
+            const name = voteInput.className
+            console.log(name)
+            // const voteUrl = 'https://politicoapplication.herokuapp.com/api/v1/votes';
+            const voteUrl = 'http://localhost:3000/api/v1/votes'
             const office = voterInput[0]
             console.log(office)
             const voter = voteInput.id
             console.log(voter + "id")
             const candidate = voterInput[2]
             console.log(candidate)
-            const body = {office,voter,candidate}
+            const body = {office,voter,candidate,name}
             const fetchVote = {
                 method: 'POST',
                 headers: {

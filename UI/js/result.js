@@ -21,7 +21,7 @@ fetch(url,fetchMethod)
         const offices = res.office;
         console.log(offices)
         offices.forEach((office)=>{
-            showOffices.innerHTML += `<tr><th><a href='#' id=${office.id} class="result">${office.name}</a></th></tr>`
+            showOffices.innerHTML += `<div id='electionResult'><a href='#' id=${office.id} class="result">${office.name}</a></div>`
         })
         
     })
@@ -44,6 +44,14 @@ document.addEventListener('click', (e)=>{
             .then((res)=>res.json())
             .then((res)=>{
                 console.log(res)
+                if (res.status === 200) {
+                    console.log(res)                   
+                } else {
+                    const ul = document.createElement('ul');
+                    const li = document.createElement('li');
+                    li.innerText = res.message
+                    ul.innerHTML += li;
+                }
             })
     }
 })

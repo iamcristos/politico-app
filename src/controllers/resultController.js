@@ -5,7 +5,7 @@ class resultController{
 
     static viewResult(req,res){
         const office= parseInt(req.params.id)
-        const text= 'SELECT office, candidate, COUNT(candidate) FROM vote WHERE office=$1 GROUP BY candidate, office';
+        const text= 'SELECT office, candidate,name, COUNT(candidate) FROM vote WHERE office=$1 GROUP BY candidate, office, name';
         const values= [office]
 
         db.query(text,values).then((result)=>{
