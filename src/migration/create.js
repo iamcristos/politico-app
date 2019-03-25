@@ -63,6 +63,7 @@ const createVote= `CREATE TABLE IF NOT EXISTS Vote(
     candidate INT NOT NULL REFERENCES Candidate(id) ON DELETE CASCADE,
     office INT NOT null REFERENCES Office(id)  ON DELETE CASCADE,
     voter INT UNIQUE not null REFERENCES Users(id)  ON DELETE CASCADE,
+    name VARCHAR(255) not null,
     voted TIMESTAMP DEFAULT NOW(),
     PRIMARY KEY (id,candidate,office, voter)
 )`

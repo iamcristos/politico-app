@@ -96,6 +96,7 @@ a{
 table{
     text-align: center;
     padding: 20px;
+    background-color: red
 }
 
 #grid-party{
@@ -259,6 +260,12 @@ td{
     color:rgb(227, 227, 250);
     display: inline;
     font-size: 10px
+}
+
+/* result page */
+.seeResult{
+    background-color: brown;
+    list-style: none;
 }
 @media screen and (max-width: 1024px) {
     nav{
