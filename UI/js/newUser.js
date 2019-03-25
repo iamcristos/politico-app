@@ -1,4 +1,15 @@
 const confirm = sessionStorage.getItem('token');
+const userImage= sessionStorage.getItem('image')
+const firstname = sessionStorage.getItem('firstname');
+const lastname = sessionStorage.getItem('lastname');
+const mail = sessionStorage.getItem('email');
+const image = document.getElementById('pic')
+image.src= `${userImage}`;
+const names = document.getElementById('fullname');
+names.innerText = `${firstname} ${lastname}`;
+const email = document.getElementById('email');
+email.innerText = `${mail}`;
+
 const url = 'https://politicoapplication.herokuapp.com/api/v1/parties';
  // this proxyurl was gotten from stack overflow 
  const proxyurl = "https://cors-anywhere.herokuapp.com/";

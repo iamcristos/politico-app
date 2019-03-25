@@ -1,4 +1,21 @@
 const confirm = sessionStorage.getItem('token');
+const userImage= sessionStorage.getItem('image')
+const firstname = sessionStorage.getItem('firstname');
+const lastname = sessionStorage.getItem('lastname');
+const mail = sessionStorage.getItem('email');
+const image = document.getElementById('pic')
+image.src= `${userImage}`;
+const names = document.getElementById('fullname');
+names.innerText = `${firstname} ${lastname}`;
+const email = document.getElementById('email');
+email.innerText = `${mail}`;
+
+const dp = document.getElementById('profileImg')
+dp.src = `${userImage}`
+const inputName = document.getElementById('names')
+inputName.value = `${firstname} ${lastname}`;
+const inputEmail = document.getElementById('emails')
+inputEmail.value = mail
 
 
 if (!confirm) {
@@ -45,7 +62,19 @@ document.addEventListener('click', (e)=>{
             .then((res)=>{
                 console.log(res)
                 if (res.status === 200) {
-                    console.log(res)                   
+                    console.log(res)  
+                    const data = res.data;
+                    data.forEach((data)=>{
+                        console.log(data)
+                        const candidate = data.name;
+                        const candidateScore = data.count;
+                        console.log(candidate, candidateScore);
+                        const div = document.getElementById("seeResult");
+                        const table = `<ul class='seeResult'>
+                        <li> ${candidate}       ${candidateScore} </li>
+                        </ul>`
+                        div.innerHTML += table
+                    })                 
                 } else {
                     const ul = document.createElement('ul');
                     const li = document.createElement('li');

@@ -261,6 +261,12 @@ td{
     display: inline;
     font-size: 10px
 }
+
+/* result page */
+.seeResult{
+    background-color: brown;
+    list-style: none;
+}
 @media screen and (max-width: 1024px) {
     nav{
         position: relative;

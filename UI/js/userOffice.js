@@ -1,4 +1,15 @@
 const confirm = sessionStorage.getItem('token');
+const userImage= sessionStorage.getItem('image')
+const firstname = sessionStorage.getItem('firstname');
+const lastname = sessionStorage.getItem('lastname');
+const mail = sessionStorage.getItem('email');
+const image = document.getElementById('pic')
+image.src= `${userImage}`;
+const names = document.getElementById('fullname');
+names.innerText = `${firstname} ${lastname}`;
+const email = document.getElementById('email');
+email.innerText = `${mail}`;
+
 const url = 'https://politicoapplication.herokuapp.com/api/v1/offices';
 const fetchMethod = {
      method: 'GET',
@@ -94,8 +105,8 @@ document.addEventListener('click', (e)=>{
             console.log(voteInput);
             const name = voteInput.className
             console.log(name)
-            // const voteUrl = 'https://politicoapplication.herokuapp.com/api/v1/votes';
-            const voteUrl = 'http://localhost:3000/api/v1/votes'
+            const voteUrl = 'https://politicoapplication.herokuapp.com/api/v1/votes';
+            // const voteUrl = 'http://localhost:3000/api/v1/votes'
             const office = voterInput[0]
             console.log(office)
             const voter = voteInput.id
@@ -119,10 +130,10 @@ document.addEventListener('click', (e)=>{
                     console.log(data)
                     if (data.status === 200) {
                         const success = document.getElementById('success')
-                        success.innerHTML = `<h3>Your vote is registered successfully</h3>`
+                        success.innerHTML = `<h3 id='voteMsg'>Your vote is registered successfully</h3>`
                     } else {
                         const err = document.getElementById('err')
-                        err.innerHTML = `<h3>${data.message}</h3>`
+                        err.innerHTML = `<h3 id ='errVote'>${data.message}</h3>`
                     }
                 })
         })
