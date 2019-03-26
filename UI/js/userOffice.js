@@ -42,7 +42,6 @@ fetch(url,fetchMethod)
 // click to show candidate
 document.addEventListener('click', (e)=>{
     if (e.target.classList.contains('officeId')){
-        console.log('u clicked a tag')
         const form = document.getElementById('form') 
         form.innerHTML = ''
         form.innerHTML = `<button type='submit'>Vote</button><br>`
@@ -51,7 +50,6 @@ document.addEventListener('click', (e)=>{
         success.innerHTML = ""
         const err = document.getElementById('err')
         err.innerHTML = ""
-        // console.log(officeId);
         const url = 'https://politicoapplication.herokuapp.com/api/v1/office/register';
         const fetchMethod = {
             method: 'GET',
@@ -96,23 +94,19 @@ document.addEventListener('click', (e)=>{
                     })
                     const form = document.getElementById('form') 
                     form.classList.toggle('formvote');
+                } else {
+
                 }
             });
         form.addEventListener('submit',(e)=>{
             e.preventDefault()
             const voteInput = document.querySelector('input[name=office]:checked')
             const voterInput = voteInput.value;
-            console.log(voteInput);
             const name = voteInput.className
-            console.log(name)
             const voteUrl = 'https://politicoapplication.herokuapp.com/api/v1/votes';
-            // const voteUrl = 'http://localhost:3000/api/v1/votes'
             const office = voterInput[0]
-            console.log(office)
             const voter = voteInput.id
-            console.log(voter + "id")
             const candidate = voterInput[2]
-            console.log(candidate)
             const body = {office,voter,candidate,name}
             const fetchVote = {
                 method: 'POST',
@@ -127,7 +121,6 @@ document.addEventListener('click', (e)=>{
             fetch(voteUrl,fetchVote)
                 .then((res)=>res.json())
                 .then((data)=>{
-                    console.log(data)
                     if (data.status === 200) {
                         const success = document.getElementById('success')
                         success.innerHTML = `<h3 id='voteMsg'>Your vote is registered successfully</h3>`

@@ -47,6 +47,8 @@ fetch(url,fetchMethod)
 
 document.addEventListener('click', (e)=>{
     if (e.target.classList.contains('result')) {
+        const div = document.getElementById("seeResult");
+        div.innerHTML += ''
         const id = e.target.id
         console.log(id)
         const resultUrl = `https://politicoapplication.herokuapp.com/api/v1/${id}/result`
@@ -76,10 +78,9 @@ document.addEventListener('click', (e)=>{
                         div.innerHTML += table
                     })                 
                 } else {
-                    const ul = document.createElement('ul');
-                    const li = document.createElement('li');
-                    li.innerText = res.message
-                    ul.innerHTML += li;
+                    const div = document.getElementById("seeResult");
+                    const li = `<ul class= 'seeResult'><li>${res.message}</li></ul>`
+                    div.innerHTML += li
                 }
             })
     }

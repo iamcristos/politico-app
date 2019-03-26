@@ -262,11 +262,26 @@ td{
     font-size: 10px
 }
 
+.divmessage{
+    margin:10px;
+    padding: 5px;
+    margin-top: 5%;
+    margin-left: 20%;
+}
+
+#voteMsg {
+    border: 1px solid green;
+}
+
+#errVote {
+    border: 1px solid red;
+}
 /* result page */
 .seeResult{
     background-color: brown;
     list-style: none;
 }
+
 @media screen and (max-width: 1024px) {
     nav{
         position: relative;
