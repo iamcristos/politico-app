@@ -1,0 +1,237 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0.0",
+    "title" : "politico",
+    "description" : "A simple voting app"
+  },
+  "schemes" : [
+    "https"
+  ],
+  "host" : "https://politicoapplication.herokuapp.com",
+  "basePath" : "/api/v1/",
+  "consumes": [
+    "form-data"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths" : {
+      "/parties" : {
+          "post" : {
+              "tags" : [
+                "parties"
+              ],
+              "description" : "Admin can create Political parties",
+              "parameters" : [
+                {
+                  "name" : "party",
+                  "in" : "body",
+                  "description" : "a new party we want to create",
+                  "schema": {
+                    "$ref": "#/definitions/parties"
+                   }
+                 }
+              ],
+              "produces" : [
+                "application/json"
+              ],
+              "responses" : {
+                "201" : {
+                  "description" : "party created successfully"
+                },
+                "401" : {
+                  "description" : "access denied"
+                },
+                "400" : {
+                  "description" : "Party name exists"
+                }
+              }
+          },
+        "get" : {
+            "tags" :[
+              "parties"
+            ],
+            "summary": "Get all parties in system",
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/party"
+              }
+          }
+        }
+      },
+      "/parties/{partyId}" : {
+        "parameters": [
+          {
+            "name": "partyId",
+            "in": "path",
+            "required": true,
+            "description": "ID of party that we want to find",
+            "type": "array"
+          }
+        ],
+        "get" : {
+          "tags" : [
+            "parties"
+          ],
+          "summary" : "Get party with that Id",
+          "responses" :{
+            "200" : {
+              "description": "Party is found",
+              "schema": {
+                "$ref": "#/definitions/parties"
+              }
+            },
+            "404" :{
+              "description": "party dont existx"
+            }
+          }
+        },
+        "delete": {
+          "summary": "Delete party with given ID",
+          "tags": [
+            "parties"
+          ],
+          "responses": {
+            "200": {
+              "description": "Party is deleted",
+              "schema": {
+                "$ref": "#/definitions/parties"
+              }
+            },
+            "404" :{
+              "description" : "party dont existx"
+            }
+          }
+        },
+        "patch": {
+          "summary": "Update party with give ID",
+          "tags": [
+            "parties"
+            ],
+            "parameters": [
+              {
+                "name": "parties",
+                "in": "body",
+                "description": "Party with new values of properties",
+                "schema": {
+                  "$ref": "#/definitions/parties"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Party is updated",
+                "schema": {
+                  "$ref": "#/definitions/parties"
+                }
+              }
+            }
+          }
+      }
+    },
+    "/office" : {
+        "post" : {
+            "tags" :[
+              "offices"
+            ],
+            "description" : "Admin can create Office",
+            "parameters": [
+              {
+                "name": "office",
+                "in": "body",
+                "description": "User that we want to create",
+                "schema": {
+                  "$ref": "#/definitions/offices"
+                }
+              }
+            ],
+            "produces": [
+              "application/json"
+            ],
+            "responses": {
+              "201": {
+                "description": "New office is created",
+                "schema": {
+                  "$ref": "#/definitions/offices"
+                }
+              },
+              "400" :{
+                "description": "Office name exists"
+              }
+            }
+        },
+        "get" :{
+          "tags" :[ "offices"],
+          "summary" : "Get all offices in system",
+          "responses":{
+            "200":{
+              "description":"OK",
+              "schema":{
+                "$ref":"#/definitions/office"
+              }
+            }
+          }
+        },
+        "/offices/{officeId}" : {
+            "parameters":[
+              {
+                "name":"officeId",
+                "in":"path",
+                "required":true,
+                "description" : "ID of office that we want to find",
+                "type":"array"
+              }
+            ]
+        }
+    }
+  },
+  "definitions": {
+    "parties": {
+      "required": [
+        "name",
+        "hqAddress",
+        "logourl"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "hqAddress": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "logourl": {
+          "type": "file"
+        }
+      }
+    },
+    "party": {
+      "type": "array",
+      "$ref": "#/definitions/parties"
+    },
+    "offices": {
+      "required": [
+        "name",
+        "type"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "type": {
+          "type": "string",
+          "uniqueItems": true
+        }
+      }
+    },
+    "office": {
+      "type": "array",
+      "$ref": "#/definitions/offices"
+    }
+  }
+}
